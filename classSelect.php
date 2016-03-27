@@ -1,7 +1,13 @@
 <?php
-
+$criteria .= $_POST["required"];
+$criteria .= $_POST["wi"];
+$criteria .= $_POST["elective"];
 //$taken = $_POST["taken"];
-$taken = array("201");
+$taken = array(201, 202, 203, 341, 331, 411);
+echo($criteria ." search criteria.<br>");
+if(max($taken) >= 400){
+	array_push($taken, "4XX");
+}
 
 //R & W have a higher priority.
 
@@ -77,13 +83,11 @@ $classes = array(
 foreach($taken as $class){
 	if(array_key_exists($class, $classes)){
 		foreach($classes[$class] as $key => $val){
-			if(!in_array($key, $taken)){
+			if(!in_array($key, $taken) && strpos($criteria, $val) !== false ){
 				echo($key . " " . $val . "<br>");
 			}
-			//echo($class . " - class taken<br>");
-			//echo($val . " " . $key . "<br>");
 		}
 	}
 }
-
+//Should do lower level electives first.
 ?>

@@ -16,6 +16,9 @@
 			<form method="POST" action="classSelect.php">
 			Classes: <input type="text" class="inputStyle" name="taken" /><br />
 			<input type="submit" name="submit" />
+			Required:<input type="checkbox" name="required" value="r"><br />
+			Writing intensive:<input type="checkbox" name="wi" value="w"><br />
+			Elective:<input type="checkbox" name="elective" value="e"><br />
 			</form>
 		</div>
 	</div>
