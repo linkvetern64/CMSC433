@@ -1,33 +1,38 @@
 <?php
 
-$taken = $_POST["taken"];
+//$taken = $_POST["taken"];
+$taken = array("201");
+
+//R & W have a higher priority.
+
+//E is general electives
 
 $classes = array(
 
-$_201 = array(	"202" => "r"),
+"201" => array(	"202" => "r"),
 
-$_202 = array(	"203" => "r", 
+"202" => array(	"203" => "r", 
 				"304" => "w", 
 				"484" => "e", 
 				"486" => "e"),
 
-$_203 = array(	"313" => "r", 
+"203" => array(	"313" => "r", 
 				"331" => "r", 	
 				"341" => "r", 
 				"451" => "e", 
 				"452" => "e", 
 				"457" => "e"),
 
-$_313 = array(	"411" => "r",
+"313" => array(	"411" => "r",
 				"421" => "r",
 				"435" => "e"),
 
-$_331 = array(	"431" => "e",
+"331" => array(	"431" => "e",
 				"432" => "e",
 				"433" => "e",
 				"473" => "e"),
 
-$_341 = array(	"421" => "r",
+"341" => array(	"421" => "r",
 				"427" => "e",
 				"431" => "e",
 				"435" => "e",
@@ -44,35 +49,41 @@ $_341 = array(	"421" => "r",
 				"475" => "e",
 				"481" => "e"),
 
-$_421 = array(	"426" => "e",
+"421" => array(	"426" => "e",
 				"483" => "e",
 				"487" => "e"),
 
-$_435 = array(	"493" => "e"),
+"435" => array(	"493" => "e"),
 
-$_461 = array(	"465" => "e",
+"461" => array(	"465" => "e",
 				"466" => "e"),
 
-$_471 = array(	"493" => "e",
+"471" => array(	"493" => "e",
 				"479" => "e",
 				"478" => "e",
 				"477" => "e"),
 
-$_481 = array(	"465" => "e",
+"481" => array(	"465" => "e",
 				"466" => "e",
 				"487" => "e"),
 
-$_4XX = array(	"447" => "r",
+"4XX" => array(	"447" => "r",
 				"448" => "e")
 
 );
-foreach($classes as $index){
-	foreach($index as $key => $val){
-		if($val == "r"){
-			echo($key . " <br>");
+
+//taken is classes, iterator is current class taken
+//this checks if it needs to be printed
+foreach($taken as $class){
+	if(array_key_exists($class, $classes)){
+		foreach($classes[$class] as $key => $val){
+			if(!in_array($key, $taken)){
+				echo($key . " " . $val . "<br>");
+			}
+			//echo($class . " - class taken<br>");
+			//echo($val . " " . $key . "<br>");
 		}
 	}
 }
-
 
 ?>

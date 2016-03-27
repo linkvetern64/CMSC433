@@ -1,0 +1,32 @@
+body{
+	background:none;
+}
+
+#container{
+	width:600px;
+	height:700px;
+	margin-left:30%;
+	background-color:#565656;
+	border:2px black solid;
+}
+
+#header{
+	 
+	width:inherit;
+	height:20%;
+	clear:right;
+	float:left;
+}
+
+#body{
+	border-top:2px black solid;
+	width:inherit;
+	height:80%;
+	clear:left;
+	float:right;
+}
+
+input.inputStyle{
+	background-color:#904545;
+	border-style: none;
+}
