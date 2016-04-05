@@ -1,0 +1,310 @@
+﻿body
+{
+/*background-image:url('images/background.jpg');*/
+background-color:#efece6;
+background-repeat:none;
+background-size:100%;
+margin:0 auto;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+
+#divExternal
+{
+position:relative;
+border:none;
+padding:auto;
+background-color:#800000;
+height:auto;
+width:900px;
+margin:0 auto;
+
+
+}
+
+#divWrapper
+{
+position:relative;
+border:thin grey solid;
+padding:auto;
+background-color:white;
+height:671px;
+width:790px;
+margin:0 auto;
+}
+
+#divTopper
+{
+    width:100%;
+    height:75px;
+    background-color:#171415;
+    position:fixed;
+}
+#divPawBuffer
+{
+    left:0px;
+    width:50%;
+    height:inherit;
+    position:fixed;
+	text-align:center;
+	background:black;
+	
+    /*-webkit-transition-property: width;
+    -webkit-transition-duration: .5s;
+    -webkit-transition-timing-function: linear;
+*/
+	}
+/*Makes the UMBC Paw move rightward
+#divPawBuffer:hover
+{
+    background:black;
+    width:800px; 
+}*/
+
+/*Allows selection of pages through fixed top nav bar */
+#divNavMenu
+{
+    right:0px;
+    position:fixed;
+    height:inherit;
+    width:50%;
+    /*Normal did gold son*/
+    background:gold;
+}
+
+#divImageRedirect
+{
+
+	background:#555555;
+	opacity:0;
+	
+}
+
+#divPopout:hover
+{
+	opacity:1;
+}
+
+
+#divMenuBuffer
+{
+ 
+    left:auto;
+    position:fixed;
+    height:inherit;
+    width:70px;
+    background:black;
+    text-align:center;
+}
+
+#divMenuChoice
+{
+ 
+    left:50px;
+    position:fixed;
+    height:inherit;
+    width:70px;
+    background:white;
+    text-align:center;
+}
+
+#divPopout 
+{
+    position:inherit;
+    width: 100px;
+    height: 50px;
+    background: red;
+    /* For Safari 3.1 to 6.0 */
+    -webkit-transition-property: width;
+    -webkit-transition-duration: .5s;
+    -webkit-transition-timing-function: linear;
+   
+    /* Standard syntax */
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+     
+    
+   
+}
+/*In order to specify an action you must define the function like this*/
+#divPopout:hover
+{
+    background-color:#112222;
+    width:200px;
+    
+}
+	
+#divImg{
+height:125px;
+border:thin grey solid;
+padding:auto;
+background-color:#333333;
+width:790px;
+margin:0 auto;
+}
+#divHeader{
+height:40px;
+width:100%;
+background-color:black;
+color:white;
+font-size:35px;
+text-align:center;
+margin:0 auto;
+}
+#divContainer{
+width:100%;
+height:615px;
+margin:0 auto;
+
+
+}
+
+#divFooter{
+width:100%;
+background-color:#333333;
+height:25px;
+text-align:center;
+margin:0 auto;
+color:#cccccc;
+
+}
+#Navigation 
+{
+    /*min-width:500px;*/
+	background-color:inherit;
+	/*border-bottom:thin red solid;*/
+	font-size: 12px;
+	color:Black;
+	height: 30px;
+	/*Once the nav bar reaches overflow, reduce it to a smaller menu*/
+	width: auto;
+	padding-top: 20px;
+	margin:0 auto;
+	
+}
+
+
+/* Gradient transparent - color - transparent */
+		
+hr.style-two {
+    border: 0;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+
+p.body-pretty{
+	border: 0;
+	width: 80%;
+	
+	margin-left: 10%;
+}
+
+#mainNav 
+{
+	position:fixed;
+	margin:0 auto;
+	padding: 0px;
+	list-style-image: none;
+	list-style-type: none;
+}
+.menu
+{
+    min-width:600px;
+    overflow:hidden;
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	}
+.menu ul{
+	 
+	background:inherit;
+	height:inherit;
+	list-style:none;
+	margin:0;
+	padding:0;
+	width:auto;
+	}
+	.menu li{
+		float:left;
+		padding:0px;
+		width:auto;
+		height:auto;
+		}
+	.menu li a{
+		background:inherit url("images/seperator.gif") bottom right no-repeat;
+		color:#000000;
+		display:block;
+		font-weight:normal;
+		line-height:35px;
+		margin:0px;
+		padding:0px 25px;
+		text-align:center;
+		 
+		text-decoration:none;
+		}
+		.menu li a:hover, .menu ul li:hover a{
+			background-position: inherit center;
+			color:#FFFFFF;
+			text-decoration:none;
+			background-color:#fad000  ;
+			background-image: url('images/hover.gif');
+			background-repeat: no-repeat;
+			background-attachment: inherit;
+
+}
+	.menu li ul{
+		background:inherit;
+		display:none;
+		height:auto;
+		padding:0px;
+		margin:0px;
+		border:0px;
+		position:absolute;
+		width:225px;
+		z-index:200;
+
+		}
+	.menu li:hover ul{
+		display:block;
+		
+		}
+	.menu li li {
+		background:url('images/sub_sep.gif') bottom left no-repeat;
+		display:block;
+		float:none;
+		margin:0px;
+		padding:0px;
+		width:225px;
+		}
+	.menu li:hover li a{
+		background:none;
+		
+		}
+	.menu li ul a{
+		display:block;
+		height:35px;
+		font-size:12px;
+		font-style:normal;
+		margin:0px;
+		padding:0px 10px 0px 15px;
+		text-align:left;
+		}
+		.menu li ul a:hover, .menu li ul li:hover a{
+			background:inherit url('images/hover_sub.gif') center left no-repeat;
+			border:0px;
+			color:#ffffff;
+			text-decoration:none;
+			}
+	.menu p{
+		clear:left;
+		}	
+
+		

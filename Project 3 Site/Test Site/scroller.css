@@ -1,0 +1,63 @@
+
+		#wrap{			
+      position: absolute;
+			width:100%;
+			height: auto;
+			margin:0 auto;
+      
+		}
+		
+		
+				
+		#content{	
+			/*		
+			
+			THIS RUINS THE LAYOUT OF THE WEBSITE
+			
+			overflow:hidden;
+			-moz-box-shadow: 0 0 2px 2px #ccc;
+			-webkit-box-shadow: 0 0 2px 2px #ccc;
+			box-shadow: 0 0 2px 2px #ccc;		
+      height: 100%;*/
+		}
+		
+		.contentbox-wrapper{			
+			position:relative; 
+			left:0; 
+			width:10000%;
+      overflow: hidden;
+      height: 100%;
+		}
+		
+		.contentbox{
+			width:1%; 
+			height: 100%;
+			float:left; 
+			 
+      /* width in % + padding in px */
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+			 
+			overflow: auto;   
+		}
+		
+		
+		#nav {
+			position: fixed;
+			z-index: 999;
+			width: 100%;
+			text-align: center;
+			background-color: black;
+			color: white;
+			border-bottom: 1px solid #DDDDDD;
+			padding: 5px 10px;
+		}
+		
+		#nav ul li{
+			display:inline;
+			margin-right:10px;
+		}
+		
+		#nav a.active {
+			text-decoration: underline;
+		}
