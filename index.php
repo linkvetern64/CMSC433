@@ -1,26 +1,37 @@
 <?php
-	//To do 
+	session_start();
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Class Selector</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Class picker</title>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<style>
+		input.button:checked{
+			background-color:red;
+		}
+
+	</style>
 </head>
-<body>
+<body class="bg">
+	<div class="background-image"></div>
 	<div id="container">
-		<div id="header">
-		Header stuff
-		</div>
-		<div id="body">
-			<form method="POST" action="classSelect.php">
-			Classes: <input type="text" class="inputStyle" name="taken" /><br />
-			<input type="submit" name="submit" />
-			Required:<input type="checkbox" name="required" value="r"><br />
-			Writing intensive:<input type="checkbox" name="wi" value="w"><br />
-			Elective:<input type="checkbox" name="elective" value="e"><br />
-			</form>
-		</div>
+	<br />
+ 	<div id="header"></div>
+ 	<div id="body">
+	<form method="POST" action="validate.php">
+	<input type="text" name="firstName" class="top" placeholder="First Name"/>	<?php if($_SESSION["validFN"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+	<input type="text" name="lastName" placeholder="Last Name" class="middle"/>	<?php if($_SESSION["validLN"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+	<input type="text" name="umbcID" placeholder="UMBC ID" class="middle"/>		<?php if($_SESSION["validID"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+	<input type="text" name="email" placeholder="Email" class="bottom"/>		<?php if($_SESSION["validE"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+	<button class="button"  style="vertical-align:middle"><span>Submit &nbsp;</span></button>
+	</form>
 	</div>
+	</div>
+	<!-- TEST STUFF -->
+
+	<!-- END TEST STUFF-->
 </body>
 </html>
