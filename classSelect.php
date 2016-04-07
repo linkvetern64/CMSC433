@@ -3,7 +3,13 @@ $criteria .= $_POST["required"];
 $criteria .= $_POST["wi"];
 $criteria .= $_POST["elective"];
 //$taken = $_POST["taken"];
-$taken = array(201, 202, 203, 341, 331, 411);
+$criteria ="rwe";
+$taken = array();
+	foreach($_POST as $val){
+		array_push($taken, $val);
+	}
+
+
 echo($criteria ." search criteria.<br>");
 if(max($taken) >= 400){
 	array_push($taken, "4XX");
@@ -91,3 +97,9 @@ foreach($taken as $class){
 }
 //Should do lower level electives first.
 ?>
+<html>
+<body>
+<br /><br />
+<a href="index.php">Home</a>
+</body>
+</html>

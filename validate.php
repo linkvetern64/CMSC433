@@ -39,6 +39,6 @@
 		header("Location:index.php");
 	}
 	else{
-		header("Location:selectClass.php");
+		header("Location:select.php");
 	}
 ?>
