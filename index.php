@@ -30,9 +30,11 @@
 			</form>
 		</div>
 	</div>
+	
 	<div id="footer"></div>
 	<!-- TEST STUFF -->
 
 	<!-- END TEST STUFF-->
+
 </body>
 </html>

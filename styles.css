@@ -13,7 +13,9 @@
     text-align: center
    
 }
-
+body{
+  background-repeat: no-repeat;
+}
 #body{
     height:240px;
     width:inherit;

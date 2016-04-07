@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Animated Checkboxes</title>
+ 
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'><!-- Can delete -->
+<link rel="stylesheet" href="animated-checkboxes/css/style.css" media="screen" type="text/css" />
+<script>
+function show(){
+  document.getElementById('content').innerHTML= "red";
+}
+
+function hide(){
+  document.getElementById('content').innerHTML="";
+}
+</script>
+</head>
+<body>
+<form method="POST" action="test.php">
+
+<div id="checkboxes">
+    <input type="checkbox" name="201" value="201" id="201" />
+    <input type="checkbox" name="202" value="202" id="202" />
+    <input type="checkbox" name="203" value="203" id="203" />
+    <input type="checkbox" name="304" value="304" id="304" />
+    <input type="checkbox" name="313" value="313" id="313" />
+</div>
+
+<ul class="choice-list">
+    <label class="choice" onmouseover="show()" onmouseleave="hide()" for="201"><li class="checkbox _201 "></li></label>
+    <label class="choice" for="202"><li class="checkbox _202 "></li></label>
+    <label class="choice" for="203"><li class="checkbox _203 "></li></label>
+    <br />
+    <hr>
+
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    <label class="choice" for="304" ><li class="checkbox _304 "></li></label>
+    <label class="choice" for="313"><li class="checkbox _313"></li></label>
+    
+</ul>
+<p id="content" value="Nonsense"></p>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="animated-checkboxes/js/animated-checkboxes.js"></script>
+<input type="submit" />
+</form>
+</body>
+</html>
