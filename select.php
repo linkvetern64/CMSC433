@@ -61,11 +61,9 @@ function hide(){
   </ul>
 
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  
   <input type="submit" />
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <p id="content"> </p>
 </form>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>

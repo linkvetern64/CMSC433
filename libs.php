@@ -39,3 +39,7 @@ function credCheck(){
 	}
 }
 
+function runtime(){
+	return round(microtime(true) * 1000);
+}
+

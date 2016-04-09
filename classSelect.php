@@ -1,9 +1,14 @@
 <?php
+include("parse.php");
+
 $criteria .= $_POST["required"];
 $criteria .= $_POST["wi"];
 $criteria .= $_POST["elective"];
-//$taken = $_POST["taken"];
 $criteria ="rwe";
+
+$suggestedClasses = array();
+
+
 $taken = array();
 	foreach($_POST as $val){
 		array_push($taken, $val);
@@ -90,11 +95,14 @@ foreach($taken as $class){
 	if(array_key_exists($class, $classes)){
 		foreach($classes[$class] as $key => $val){
 			if(!in_array($key, $taken) && strpos($criteria, $val) !== false ){
-				echo($key . " " . $val . "<br>");
+				array_push($suggestedClasses, $key);
+				echo($key . " " . "<br>");
 			}
 		}
 	}
 }
+
+getClassInfo("CMSC", $suggestedClasses);
 //Should do lower level electives first.
 ?>
 <html>
