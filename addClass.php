@@ -20,8 +20,8 @@ $cmsc3xx = array("304", "313", "331", "341", "352", "391");
 
 $cmsc4xx = array("404", "411", "421", "426", "427", "431", "432", "433", "435", "436", "437", "441", "442", "443", "444", "446", "447", "448", "451", "452", "453", "455", "456", "457", "461", "465", "466", "471", "473", "475", "476", "477", "478", "479", "481", "483", "484", "487", "491", "493", "495", "498", "499");
 
-$sql = "INSERT INTO `qq45691`.`2XX` (`USER`) VALUES ('$_POST[id]');
-$rs = $COMMON->executeQuery($sql, $_SERVER["Script_Name"]);
+$sql = "INSERT INTO `qq45691`.`2XX` (`USER`) VALUES ('$_POST[id]')";
+$rs = $COMMON->executeQuery($sql, $_SERVER['Script_Name']);
 
 $sql = "INSERT INTO `qq45691`.`3XX` (`USER`) VALUES ('$_POST[id]');
 $rs = $COMMON->executeQuery($sql, $_SERVER["Script_Name"]);
