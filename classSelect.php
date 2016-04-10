@@ -11,7 +11,7 @@
 	$criteria .= $_POST["required"];
 	$criteria .= $_POST["wi"];
 	$criteria .= $_POST["elective"];
-	$criteria ="rwe";
+	$criteria = "rwe";
 
 	$suggestedClasses = array();
 
@@ -19,7 +19,6 @@
 	$taken = array();
 	
 	foreach($_POST['check_list'] as $val){
-		echo($val . "<br>");
 		array_push($taken, $val);
 	}
 
@@ -118,7 +117,9 @@
 		echo($key . "<br>");
 	}
 
-	getClassInfo("CMSC", $suggestedClasses);
+	//START HERE
+	$arr = getClassInfo("CMSC", $suggestedClasses);
+	
 	$then = runtime();
 	echo("Runtime: " . ($then - $now) . " Milliseconds");
 	//Should do lower level electives first.

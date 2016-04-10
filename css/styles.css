@@ -14,7 +14,7 @@
    
 }
 body{
-  background:black url('bg/bg3.png');
+  background:black url('../images/bg3.png');
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size:cover;
@@ -222,6 +222,7 @@ content from style.css
   display: inline-block;
   width: 100px;
   height: 100px;
+
 
 }
 

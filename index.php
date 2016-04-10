@@ -8,13 +8,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Class picker</title>
-	<link rel="stylesheet" href="styles.css" type="text/css"  media="all"  />
-	<link rel="stylesheet"  href="classes.css" type="text/css" media="screen"  />
-	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<link rel="stylesheet" href="css/styles.css" type="text/css"  media="all"  />
+	<link rel="stylesheet"  href="css/classes.css" type="text/css" media="screen"  />
 </head>
 <body>
-	<img id="img1" src="bg/bg3.png" />
-	<img id="img2" src="bg/bg2.png" />
+	<img id="img1" src="images/bg3.png" />
+	<img id="img2" src="images/bg2.png" />
 	<div id="container">
 		<br />
 	 	<div id="header"></div>
@@ -70,12 +69,12 @@
 		</ul>
 		<button class="button"  style="vertical-align:middle"><span>Submit &nbsp;</span></button>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		 
-		<br /><br /><br /><br /><br /><br />
+		
 		
 		</form>
 	</div>
-	<div  id="footer"></div>
+	<!--<div  id="footer"></div>-->
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="js/jstyle.js"></script>
 </body>
 </html>
