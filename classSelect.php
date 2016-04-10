@@ -119,7 +119,25 @@
 
 	//START HERE
 	$arr = getClassInfo("CMSC", $suggestedClasses);
-	
+	echo("<script>
+
+			
+
+
+
+		</script>");
+
+	echo("
+
+		<div style='width:50px;height:50px;background-color:green;' onmouseover='show()' onmouseout='hide()'>
+		</div>
+
+		<div style='width:500px;height:75px;'>
+		<p id='content'></p>
+		</div>
+
+
+		");
 	$then = runtime();
 	echo("Runtime: " . ($then - $now) . " Milliseconds");
 	//Should do lower level electives first.
