@@ -13,7 +13,7 @@
 			 			$line = fgets($file); // gets the next line in the file for analysis
 			 			if(strpos($line, strval($class)) !== FALSE){ //If the line contains string with class name
 			 				while(!preg_match("/\^/", $line)){
-			 					$desc .= $line . "<br>";
+			 					$desc .= $line;
 			 					$line = fgets($file);
 			 				}
 			 			}

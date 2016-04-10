@@ -1,16 +1,8 @@
 <?php
 	session_start();
-	//
 
 	require_once('JSON.php');
 	$json = new Services_JSON();
- 
-
-	//
-
-
-
-
 	include("libs.php");
 	include("parse.php");
 
@@ -177,7 +169,7 @@
 
 <br /><br />
 <p id="content" style="overflow:auto;height:auto;width:100%"></p> 
-<a href="index.php">Home</a>
+<a style="float:left;height:auto;" href="index.php">Home</a>
 
 </body>
 </html>
