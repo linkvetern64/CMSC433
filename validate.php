@@ -1,6 +1,13 @@
 <?php
 	session_start();
 	
+	$_SESSION["firstName"] = $_POST["firstName"];
+	$_SESSION["lastName"] = $_POST["lastName"];
+	$_SESSION["email"] = $_POST["email"];
+	$_SESSION["umbcID"] = $_POST["umbcID"];
+
+	$_SESSION["postData"] = $_POST;
+
 	$_SESSION["validFN"] = "";
 	$_SESSION["validLN"] = "";
 	$_SESSION["validE"] = "";
@@ -39,6 +46,6 @@
 		header("Location:index.php");
 	}
 	else{
-		header("Location:select.php");
+		header("Location:classSelect.php");
 	}
 ?>

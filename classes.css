@@ -39,7 +39,6 @@
 }
 
 
-
 ._331:after {
   content: "331";
   background-color: rgba(145, 61, 136, 0);
@@ -63,3 +62,5 @@
 ._411.is-checked:after {
   background-color: #446CB3;
 }
+
+ 

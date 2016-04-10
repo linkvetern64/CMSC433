@@ -1,6 +1,4 @@
 <?php 
-session_start();
-
 /* 
 ** Desc: Connects user to database, with static credentials
 */
@@ -27,18 +25,9 @@ function disconnect($conn){
 }
 
 /*
-** Desc:
-**	Checks the users credentials, and if they're not valid. Redirect them to specified page.
-**  Credentials are tracked through session variables and obtained via verifyUser.php
-**
+** Desc: Gets current time in milliseconds
+**		 - Used for runtime purposes
 */
-function credCheck(){
-	session_start();
-	if(!$_SESSION["auth"]){
-		header("Location:indexed.html");
-	}
-}
-
 function runtime(){
 	return round(microtime(true) * 1000);
 }
