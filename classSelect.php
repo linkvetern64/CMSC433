@@ -115,60 +115,52 @@
 
 	sort($suggestedClasses);
 
+	/** TEST STUFF BELOW **/
 	foreach ($suggestedClasses as $key) {
 		echo($key . "<br>");
 	}
 
-	//START HERE
+	//Array of classes that are suggested	
 	$arr = getClassInfo("CMSC", $suggestedClasses);
- 
-
-  	$test =  $json->encode($arr[0]);
-
+	//Strips away illegal characters
+  	$test =  $json->encode($arr[1]);
+  	//
 	$then = runtime();
 	echo("Runtime: " . ($then - $now) . " Milliseconds");
-	//Should do lower level electives first.
+ 
+
+	/** TEST STUFF ENDS ABOVE **/
 ?>
 <html>
 <head>
-<?php
-	echo("
-
 		<script>	
-			function show(){	
-			var info= '$test'; 
-			 	document.getElementById('content').innerHTML= $test;
+			function show(index){	
+			var info = <?php echo($test) ?>; 
+			var info = index;
+			 	document.getElementById('content').innerHTML= info;
 			}
 
 			function hide(){
 			  document.getElementById('content').innerHTML='';
 			}
 		</script>
-
-	");
-	?>
 </head>
 <body>
 <?php
-
+	//Procedurally generates div blocks
+	foreach($suggestedClasses as $val){
 	echo("
 
-		<div style='width:50px;height:50px;background-color:green;' onmouseover= 'show()' onmouseout= 'hide()'>
-
+		<div style='width:50px;height:50px;background-color:green;display:inline-block;padding:20px;' onmouseover= 'show($val)' onmouseout= 'hide()'>
+			$val 
 		</div>
-
-		<div style='width:500px;height:75px;'>
-		<p id='content'>Here</p>
-		</div>
-
-
 		");
-
+	}
 ?>
 
 
 <br /><br />
-<p id="content" style="overflow:auto;height:auto;width:100%"></p> 
+<p id="content" style="overflow:auto;height:auto;width:100%">Here</p> 
 <a style="float:left;height:auto;" href="index.php">Home</a>
 
 </body>
