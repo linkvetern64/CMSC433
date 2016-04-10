@@ -10,7 +10,7 @@ structures, functions, lists, strings, abstract data types, file I/O, and recurs
 CMSC 202
 Computer Science II for Majors
 (4.00)
-This course continues the student's development of programming and problem-solving skills by
+This course continues the students development of programming and problem-solving skills by
 providing an introduction to object-oriented design and programming (OOP). The primary focus is on
 OOP principles and techniques, including encapsulation, composition, inheritance, and polymorphism.
 Other OOP topics such as exception handling, containers, and generic programming are also covered.

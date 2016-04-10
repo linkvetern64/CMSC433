@@ -1,5 +1,15 @@
 <?php
 	session_start();
+	//
+
+	require_once('JSON.php');
+	$json = new Services_JSON();
+ 
+
+	//
+
+
+
 
 	include("libs.php");
 	include("parse.php");
@@ -119,58 +129,55 @@
 
 	//START HERE
 	$arr = getClassInfo("CMSC", $suggestedClasses);
-	echo("<script>
+ 
 
-			
+  	$test =  $json->encode($arr[0]);
 
-
-
-		</script>");
-
-	echo("
-
-		<div style='width:50px;height:50px;background-color:green;' onmouseover='show()' onmouseout='hide()'>
-		</div>
-
-		<div style='width:500px;height:75px;'>
-		<p id='content'></p>
-		</div>
-
-
-		");
 	$then = runtime();
 	echo("Runtime: " . ($then - $now) . " Milliseconds");
 	//Should do lower level electives first.
 ?>
 <html>
 <head>
-	
+<?php
+	echo("
 
-	<script>
-	//GET THIS WORKING
-	function show(){
-	  document.getElementById('content').innerHTML= "(201) Credits: 4.0 Description:  This class is ez-pez lemon sqeeze";
-	}
+		<script>	
+			function show(){	
+			var info= '$test'; 
+			 	document.getElementById('content').innerHTML= $test;
+			}
 
-	function hide(){
-	  document.getElementById('content').innerHTML="";
-	}
+			function hide(){
+			  document.getElementById('content').innerHTML='';
+			}
+		</script>
 
-	//This function rechecks css after the fact
-	function clear(){
-	  console.log("Working");
-	  var arr = document.getElementsByName('check_list[]');
-	  for(i = 0; i < arr.length; i++){
-	    arr[i].checked = false;   
-	  }
-	}
-	</script>
-
-
+	");
+	?>
 </head>
 <body>
+<?php
+
+	echo("
+
+		<div style='width:50px;height:50px;background-color:green;' onmouseover= 'show()' onmouseout= 'hide()'>
+
+		</div>
+
+		<div style='width:500px;height:75px;'>
+		<p id='content'>Here</p>
+		</div>
+
+
+		");
+
+?>
+
+
 <br /><br />
+<p id="content" style="overflow:auto;height:auto;width:100%"></p> 
 <a href="index.php">Home</a>
-<p id="content"></p>
+
 </body>
 </html>

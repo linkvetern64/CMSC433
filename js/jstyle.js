@@ -28,3 +28,15 @@
 		$('.checkbox').click(function(){
 			$(this).toggleClass('is-checked');
 		});
+
+
+ 
+	//This function rechecks css after the fact
+	function clear(){
+	  console.log("Working");
+	  var arr = document.getElementsByName('check_list[]');
+	  for(i = 0; i < arr.length; i++){
+	    arr[i].checked = false;   
+	  }
+	}
+ 

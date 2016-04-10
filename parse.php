@@ -1,5 +1,5 @@
 <?php
-	
+	session_start();
 	function getClassInfo($fName, $classes){
 		$classInfo = array();
 
@@ -14,7 +14,6 @@
 			 			if(strpos($line, strval($class)) !== FALSE){ //If the line contains string with class name
 			 				while(!preg_match("/\^/", $line)){
 			 					$desc .= $line . "<br>";
-			 					echo($line . "<br>");
 			 					$line = fgets($file);
 			 				}
 			 			}
