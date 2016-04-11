@@ -1,0 +1,31 @@
+#wrapper{
+	height:auto;
+}
+
+#contain{
+	margin-left:25%;
+	width:600px;
+	height:auto;
+	background-color:black;
+	clear:left;
+	clear:right;
+	position:fixed;
+}
+
+#info{
+	width:100%;
+	bottom:0;
+	left:0;
+	height:auto;
+	position:fixed;
+}
+.generated{
+	width:50px;
+	height:50px;
+	background-color:green;
+	display:inline-block;
+	padding:20px;
+	margin-top:5px;
+	margin-left:5px;
+	border-radius:5px;
+}

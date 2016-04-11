@@ -238,13 +238,6 @@ security models; malicious software; secure programming; Operating system securi
 trusted operating system design; public policy issues including legal, privacy, and ethical issues;
 network and database security overview.
 ^
-CMSC 431
-Compiler Design Principles
-(3.00)
-A detailed study of the design and implementation of a compiler for a high-level programming
-language. Topics include lexical analysis, parsing techniques (including LL and LR parsers),
-semantic routines,run-time storage allocation, code generation and optimization.
-^
 CMSC 433
 Scripting Languages
 (3.00)
@@ -368,22 +361,6 @@ survey of parallel and distributed architectures and associated programming styl
 to parallel and distributed algorithms, and a study of trade-offs between computation and
 communication in parallel processing.
 ^
-CMSC 435
-Computer Graphics
-(3.00)
-An introduction to the fundamentals of interactive computer graphics. Topics include graphics
-hardware, line drawing, area filling, clipping, two-dimensional and three-dimensional geometrical
-transforms, three-dimensional perspective viewing, hidden surface removal, illumination, color and
-shading models.
-^
-CMSC 471
-Introduction to Artificial Intelligence
-(3.00)
-This course provides a broad introduction to artificial intelligence, its sub-fields and their
-applications. Topics include problem-solving approaches, problem spaces and search, knowledge
-representation and reasoning, logic and deduction, planning, expert systems, handling uncertainty,
-learning and natural language understanding.
-^
 CMSC 493
 Capstone Games Group Project
 (3.00)
@@ -392,42 +369,6 @@ games track to engage in a complete group project development experience. This w
 integrate the various technical concepts they have learned in earlier courses. The course aims to
 impart a foundation in team leadership and project management ability that will allow graduates to
 function effectively within multi-disciplinary teams.
-^
-CMSC 437
-Graphical User Interface Programming
-(3.00)
-This is a practical, hands-on course in how to program interactive 2-D graphical user interfaces
-using the X11/Motif package and OpenGL. Graphical user interfaces are taken here to mean not just
-standard widget sets, but also various interactive, pointer-based techniques that comprise the
-modern desktop metaphor. This course also will introduce some of the concepts and software
-techniques used to implement such applications. In addition, it briefly will review some of the
-larger issues, history and future directions of programming graphical interfaces.While the primary
-emphasis of the course is on 2-D interfaces, there will be a short introduction to some of the 3-D
-capabilities of OpenGL,as well as a discussion of 3-D interaction and virtual reality.
-^
-CMSC 448
-Software Engineering II
-(3.00)
-A continuation of the study of software engineering with emphasis on topics not fully covered in
-CMSC 345 and CMSC 447. Topics may include software maintenance; metrics; quality assurance;
-configuration management; deployment; project planning and management; and modern software
-development processes, techniques and tools. Students will be given multiple individual and
-cooperative hands-on assignments. Note: Credit will not be given for both CMSC 445 and CMSC 448.
-^
-CMSC 455
-Numerical Computations
-(3.00)
-Topics include numerical linear algebra, interpolation, solving non-linear systems and the
-numerical solution of differential equations. This course also provides some emphasis on numerical
-algorithms andcomputation in a parallel environment.
-^
-CMSC 453
-Applied Combinatorics and Graph Theory
-(3.00)
-An introduction to the application of combinatorial methods to computer science. Topics include
-enumeration methods, recurrence relations, generating functions, graph theory and graph algorithms,
-and connectivity, Euler tours, Hamiltonian cycles, flow graphs and transport networks, matching
-theory, planarity, Kuratowski’s theorem and NP-complete combinatorial problems.
 ^
 CMSC 465
 Introduction to Electronic Commerce
@@ -509,13 +450,6 @@ include legged and wheeled location, kinematic models and constraints, mobile ro
 maneuverability, motion control, sensors and sensing, perception, localization, belief
 representations, map representations, probabilistic map-based localization, autonomous map
 building, planning, reacting, and navigation architectures.
-^
-CMSC 481
-Computer Networks
-(3.00)
-This course introduces the fundamentals of data communication and computer networking, including
-circuit and packet switching; network architectures and protocols; local/metropolitan/wide-area
-networks, OSI and TCP/IP standards; network programming and applications; and network management.
 ^
 CMSC 483
 Parallel and Distributed Processing

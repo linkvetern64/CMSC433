@@ -21,6 +21,9 @@
 	$taken = array();
 	
 	foreach($_POST['check_list'] as $val){
+
+		$val = preg_replace("/\D+/", "", $val);
+		echo($val . "<br>");
 		array_push($taken, $val);
 	}
 
@@ -115,28 +118,22 @@
 
 	sort($suggestedClasses);
 
-	/** TEST STUFF BELOW **/
-	foreach ($suggestedClasses as $key) {
-		echo($key . "<br>");
-	}
-
 	//Array of classes that are suggested	
 	$arr = getClassInfo("CMSC", $suggestedClasses);
 	//Strips away illegal characters
-  	$test =  $json->encode($arr[1]);
+  	
   	//
 	$then = runtime();
 	echo("Runtime: " . ($then - $now) . " Milliseconds");
  
-
 	/** TEST STUFF ENDS ABOVE **/
 ?>
 <html>
 <head>
+		<link rel="stylesheet" type="text/css" href="css/classStyles.css" />
 		<script>	
-			function show(index){	
-			var info = <?php echo($test) ?>; 
-			var info = index;
+			function show(desc){	
+			var info = desc;
 			 	document.getElementById('content').innerHTML= info;
 			}
 
@@ -146,21 +143,33 @@
 		</script>
 </head>
 <body>
-<?php
-	//Procedurally generates div blocks
-	foreach($suggestedClasses as $val){
-	echo("
+<br><br>
+<div id="wrapper">
+	<div id="contain">
+		<?php
+			//Procedurally generates div blocks
+			$now = runtime();
+			foreach($suggestedClasses as $val){
+				$test =  $json->encode($arr[$val]);
+			echo("
+				
+				<div class='generated' onmouseover= 'show($test)' onmouseout= 'hide()'>
+					$val 
+				</div>
+				");
+			}
+				$then = runtime();
 
-		<div style='width:50px;height:50px;background-color:green;display:inline-block;padding:20px;' onmouseover= 'show($val)' onmouseout= 'hide()'>
-			$val 
-		</div>
-		");
-	}
-?>
+			echo("<br><br>Runtime: " . ($then - $now) . " Milliseconds");
+		?>
 
-
+	</div>
+	<div id="info">
+		<p id="content" style="overflow:auto;height:auto;width:100%">Here</p> 
+	</div>
+</div>
 <br /><br />
-<p id="content" style="overflow:auto;height:auto;width:100%">Here</p> 
+ 
 <a style="float:left;height:auto;" href="index.php">Home</a>
 
 </body>

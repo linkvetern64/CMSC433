@@ -1,66 +1,85 @@
-._201:after {
-  content: "201";
+/** DEFAULTS **/
+._CMSC:after{background-color: rgba(165, 194, 92, 0);}
+
+._CMSC.is-checked:after{background-color: #F4B350;}
+
+.is-checked:after {background-color: #446CB3;}
+
+/**CMSC 200 **/
+._201:after {content: "201";}
+._202:after {content: "202";}
+._203:after {content: "203";}
+
+/**CMSC 300 **/
+._304:after {content: "304";}
+._313:after {content: "313";}
+._331:after {content: "331";}
+._341:after {content: "341";}
+
+/**CMSC 400 **/
+._411:after {content: "411";}
+._421:after {content: "421";}
+._427:after {content: "427";}
+._431:after {content: "431";}
+._432:after {content: "432";}
+._433:after {content: "433";}
+._435:after {content: "435";}
+._436:after {content: "436";}
+._437:after {content: "437";}
+._441:after {content: "441";}
+._442:after {content: "442";}
+._443:after {content: "443";}
+._444:after {content: "444";}
+._446:after {content: "446";}
+._447:after {content: "447";}
+._448:after {content: "448";}
+._451:after {content: "451";}
+._452:after {content: "452";}
+._453:after {content: "453";}
+._455:after {content: "455";}
+._456:after {content: "456";}
+._457:after {content: "457";}
+._461:after {content: "461";}
+._465:after {content: "465";}
+._466:after {content: "466";}
+._471:after {content: "471";}
+._473:after {content: "473";}
+._475:after {content: "475";}
+._476:after {content: "476";}
+._477:after {content: "477";}
+._478:after {content: "478";}
+._479:after {content: "479";}
+._481:after {content: "481";}
+._483:after {content: "483";}
+._484:after {content: "484";}
+._486:after {content: "486";}
+._487:after {content: "487";}
+._491:after {content: "491";}
+._493:after {content: "493";}
+._495:after {content: "495";}
+._498:after {content: "498";}
+._499:after {content: "499";}
+
+/*  These are here because of the colors
+
   background-color: rgba(165, 194, 92, 0);
-}
-._201.is-checked:after {
   background-color: #a5c25c;
-}
 
-._202:after {
-  content: "202";
   background-color: rgba(241, 76, 56, 0);
-}
-._202.is-checked:after {
   background-color: #f14c38;
-}
 
-._203:after {
-  content: "203";
   background-color: rgba(255, 202, 37, 0);
-}
-._203.is-checked:after {
   background-color: #ffca25;
-}
 
-._304:after {
-  content: "304";
-  background-color: rgba(241, 76, 56, 0);
-}
-._304.is-checked:after {
-  background-color: #f14c38;
-}
-
-._313:after {
-  content: "313";
   background-color: rgba(224, 130, 131, 0);
-}
-._313.is-checked:after {
   background-color: #E08283;
-}
 
-
-._331:after {
-  content: "331";
   background-color: rgba(145, 61, 136, 0);
-}
-._331.is-checked:after {
   background-color: #913D88;
-}
 
-._341:after {
-  content: "341";
   background-color: rgba(244, 179, 80, 0);
-}
-._341.is-checked:after {
   background-color: #F4B350;
-}
 
-._411:after {
-  content: "411";
   background-color: rgba(68,108,179, 0);
-}
-._411.is-checked:after {
   background-color: #446CB3;
-}
-
- 
+*/

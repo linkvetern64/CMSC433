@@ -43,6 +43,7 @@
 
 	if($_SESSION["validFN"] || $_SESSION["validLN"] || $_SESSION["validE"] || $_SESSION["validID"])
 	{
+		$_POST = array();
 		header("Location:index.php");
 	}
 	else{
