@@ -3,7 +3,11 @@
 
 ._CMSC.is-checked:after{background-color: #F4B350;}
 
-.is-checked:after {background-color: #446CB3;}
+._CMSC200.is-checked:after{background-color: #a5c25c;}
+._CMSC300.is-checked:after{background-color: #ffca25;}
+._CMSC400.is-checked:after{background-color: #f14c38;}
+
+/*.is-checked:after {background-color: #446CB3;} */
 
 /**CMSC 200 **/
 ._201:after {content: "201";}

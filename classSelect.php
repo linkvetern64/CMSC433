@@ -19,12 +19,12 @@
 
 
 	$taken = array();
-	
-	foreach($_POST['check_list'] as $val){
-
-		$val = preg_replace("/\D+/", "", $val);
-		echo($val . "<br>");
-		array_push($taken, $val);
+	if(!empty($_POST['check_list'])){
+		foreach($_POST['check_list'] as $val){
+			$val = preg_replace("/\D+/", "", $val);
+			echo($val . "<br>");
+			array_push($taken, $val);
+		}
 	}
 
 
@@ -130,17 +130,15 @@
 ?>
 <html>
 <head>
-		<link rel="stylesheet" type="text/css" href="css/classStyles.css" />
-		<script>	
-			function show(desc){	
-			var info = desc;
-			 	document.getElementById('content').innerHTML= info;
-			}
-
-			function hide(){
-			  document.getElementById('content').innerHTML='';
-			}
-		</script>
+	<link rel="stylesheet" type="text/css" href="css/classStyles.css" />
+	<script>	
+		function show(desc){	
+		 	document.getElementById('content').innerHTML= desc;
+		}
+		function hide(){
+			document.getElementById('content').innerHTML='';
+		}
+	</script>
 </head>
 <body>
 <br><br>
