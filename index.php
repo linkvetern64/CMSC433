@@ -29,12 +29,20 @@
 		<br />
 	 	<div id="header"></div>
 	 	<div id="body">
+	 		<div id="staticInput">
 			<form method="POST" action="validate.php">
-				<input type="text" name="firstName" class="top" placeholder="First Name"/>	<?php if($_SESSION["validFN"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
-				<input type="text" name="lastName" placeholder="Last Name" class="middle"/>	<?php if($_SESSION["validLN"]){echo("<span style='color:red;float:right;'>*Only #'s, or not empty</span>");} ?><br />
-				<input type="text" name="umbcID" placeholder="UMBC ID" class="middle"/>		<?php if($_SESSION["validID"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
-				<input type="text" name="email" placeholder="Email" class="bottom"/>		<?php if($_SESSION["validE"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
-				<a class="button"  style="vertical-align:middle" href="#checkboxes"><span>Next &nbsp;</span></a>
+				<input type="text" name="firstName" class="top" placeholder="First Name"/>	
+				<?php if($_SESSION["validFN"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				<input type="text" name="lastName" placeholder="Last Name" class="middle"/>	
+				<?php if($_SESSION["validLN"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				<input type="text" name="umbcID" placeholder="UMBC ID" class="middle"/>		
+				<?php if($_SESSION["validID"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				<input type="text" name="email" placeholder="Email" class="bottom"/>		
+				<?php if($_SESSION["validE"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				
+			</div>
+				 <a class="button"  style="vertical-align:middle;" href="#checkboxes"><span>Next &nbsp;</span></a>
+				
 		</div>
 	</div>
 	<div id="classBody">
@@ -92,8 +100,11 @@
 		    <input type="checkbox" name="check_list[]" value="CMSC495" id="495" />
 		    <input type="checkbox" name="check_list[]" value="CMSC498" id="498" />
 		    <input type="checkbox" name="check_list[]" value="CMSC499" id="499" />
-		</div>
 
+		    <input type="checkbox" name="check_list[]" value="MATH151" id="MATH151" />
+		    <input type="checkbox" name="check_list[]" value="MATH152" id="MATH152" />
+		</div>
+		Click on courses you've taken.
 		<ul class="choice-list">
 		    <label class="choice" for="201"><li class="checkbox _CMSC200 _201"></li></label>
 		    <label class="choice" for="202"><li class="checkbox _CMSC200 _202"></li></label>
@@ -107,7 +118,6 @@
 		    <label class="choice" for="341" ><li class="checkbox _CMSC300 _341" ></li></label>
 		    <br />
 		    <hr>
-		    <a id="MATH"></a>
 	    
 		    <label class="choice" for="411" ><li class="checkbox _CMSC400 _411" ></li></label>
 		    <label class="choice" for="421" ><li class="checkbox _CMSC400 _421" ></li></label>
@@ -157,6 +167,13 @@
 		    <label class="choice" for="495" ><li class="checkbox _CMSC400 _495" ></li></label>
 		    <label class="choice" for="498" ><li class="checkbox _CMSC400 _498" ></li></label>
 		    <label class="choice" for="499" ><li class="checkbox _CMSC400 _499" ></li></label>
+		    <br />
+		    <hr>
+		    
+		   	<a id="MATH"></a>
+			<label class="choice" for="MATH151"><li class="checkbox _MATH _M151"></li></label>
+		    <label class="choice" for="MATH152"><li class="checkbox _MATH _M152"></li></label>		    
+
 
 		</ul>
 		<button class="button"  style="vertical-align:middle"><span>Submit &nbsp;</span></button>

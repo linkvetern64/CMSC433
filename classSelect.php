@@ -9,117 +9,169 @@
 	$now = runtime();
 
 	$_POST = $_SESSION["postData"];
-
 	$criteria .= $_POST["required"];
 	$criteria .= $_POST["wi"];
 	$criteria .= $_POST["elective"];
+
 	$criteria = "rwe";
 
+	//Make this associative array
 	$suggestedClasses = array();
+
+	//TEST
+	echo("DEBUG <br>");
+	echo(getDesc("CMSC201") . "<br>");
+	echo("DEBUG <br>");
+	//TEST
 
 
 	$taken = array();
 	if(!empty($_POST['check_list'])){
 		foreach($_POST['check_list'] as $val){
-			$val = preg_replace("/\D+/", "", $val);
-			echo($val . "<br>");
+			//$val = preg_replace("/\D+/", "", $val);
+			echo(getDesc($val) . "<br>");
 			array_push($taken, $val);
 		}
 	}
+	else{
+
+	}
+	$taken = array(); //DELETETHIS
 
 
 	echo($criteria ." search criteria.<br>");
 	if(!empty($taken) && max($taken) >= 400){
-		array_push($taken, "4XX");
+		array_push($taken, "CMSC4XX");
 	}
 
 	//R & W have a higher priority.
 
 	//E is general electives
+	$CHEM = array(
+		"CHEM101" => array("CHEM102" => "e"),
+		"CHEM102" => array("CHEM102L" => "e")
+		);
 
-	$classes = array(
+	$MATH = array(
 
-	"201" => array(	"202" => "r"),
+		"MATH151" => array("MATH152" => "e"),
+		"MATH152" => array("MATH251" => "e")
 
-	"202" => array(	"203" => "r", 
-					"304" => "w", 
-					"484" => "e", 
-					"486" => "e"),
+		);
 
-	"203" => array(	"313" => "r", 
-					"331" => "r", 	
-					"341" => "r", 
-					"451" => "e", 
-					"452" => "e", 
-					"457" => "e"),
+	$CMSC = array(
 
-	"313" => array(	"411" => "r",
-					"421" => "r",
-					"435" => "e"),
+	"CMSC201" => array(	"CMSC202" => "r"),
 
-	"331" => array(	"431" => "e",
-					"432" => "e",
-					"433" => "e",
-					"473" => "e"),
+	"CMSC202" => array(	"CMSC203" => "r", 
+						"CMSC304" => "w", 
+						"CMSC484" => "e", 
+						"CMSC486" => "e"),
 
-	"341" => array(	"421" => "r",
-					"427" => "e",
-					"431" => "e",
-					"435" => "e",
-					"436" => "e",
-					"437" => "e",
-					"441" => "r",
-					"443" => "e",
-					"453" => "e",
-					"455" => "e",
-					"456" => "e",
-					"461" => "e",
-					"471" => "e",
-					"476" => "e",
-					"475" => "e",
-					"481" => "e"),
+	"CMSC203" => array(	"CMSC313" => "r", 
+						"CMSC331" => "r", 	
+						"CMSC341" => "r", 
+						"CMSC451" => "e", 
+						"CMSC452" => "e", 
+						"CMSC457" => "e"),
 
-	"421" => array(	"426" => "e",
-					"483" => "e",
-					"487" => "e"),
+	"CMSC313" => array(	"CMSC411" => "r",
+						"CMSC421" => "r",
+						"CMSC435" => "e"),
 
-	"435" => array(	"493" => "e"),
+	"CMSC331" => array(	"CMSC431" => "e",
+						"CMSC432" => "e",
+						"CMSC433" => "e",
+						"CMSC473" => "e"),
 
-	"461" => array(	"465" => "e",
-					"466" => "e"),
+	"CMSC341" => array(	"CMSC421" => "r",
+						"CMSC427" => "e",
+						"CMSC431" => "e",
+						"CMSC435" => "e",
+						"CMSC436" => "e",
+						"CMSC437" => "e",
+						"CMSC441" => "r",
+						"CMSC443" => "e",
+						"CMSC453" => "e",
+						"CMSC455" => "e",
+						"CMSC456" => "e",
+						"CMSC461" => "e",
+						"CMSC471" => "e",
+						"CMSC476" => "e",
+						"CMSC475" => "e",
+						"CMSC481" => "e"),
 
-	"471" => array(	"493" => "e",
-					"479" => "e",
-					"478" => "e",
-					"477" => "e"),
+	"CMSC421" => array(	"CMSC426" => "e",
+						"CMSC483" => "e",
+						"CMSC487" => "e"),
 
-	"481" => array(	"465" => "e",
-					"466" => "e",
-					"487" => "e"),
+	"CMSC435" => array(	"CMSC493" => "e"),
 
-	"4XX" => array(	"447" => "r",
-					"448" => "e")
+	"CMSC461" => array(	"CMSC465" => "e",
+						"CMSC466" => "e"),
+
+	"CMSC471" => array(	"CMSC493" => "e",
+						"CMSC479" => "e",
+						"CMSC478" => "e",
+						"CMSC477" => "e"),
+
+	"CMSC481" => array(	"CMSC465" => "e",
+						"CMSC466" => "e",
+						"CMSC487" => "e"),
+
+	"CMSC4XX" => array(	"CMSC447" => "r",
+						"CMSC448" => "e")
 
 	);
-
+/*
 	//taken is classes, iterator is current class taken
 	//this checks if it needs to be printed
 	foreach($taken as $class){
+		$major = preg_replace("/\d+/", "", $class);
+		$num = preg_replace("/\D+/","", $class);
+		$searchToken = $major . " " . $num;
+
+
+		switch($major){
+			case "CMSC":
+				foreach($CMSC[$class] as $key => $val){
+					$suggestedClasses[$key] = getClassInfo("CMSC", $searchToken);
+				}
+				echo("CMSC <br>");
+			break;
+
+			case "MATH":
+				foreach($MATH[$class] as $key => $val){
+					$suggestedClasses[$key] = getClassInfo("MATH", $searchToken);
+				}	
+				echo("MATH <br>");
+			break;
+
+			default:
+
+			break;
+		}		
+*/
+
+
+/*
 		if(array_key_exists($class, $classes)){
 			foreach($classes[$class] as $key => $val){
 				if(!in_array($key, $taken) && strpos($criteria, $val) !== false ){
+					$i = 0;
 					if(!in_array($key, $suggestedClasses)){
+						//$key = preg_replace("/\D+/", "", $key);
 						array_push($suggestedClasses, $key);
 					}
 				}
 			}
-		}
-	}
+		}*/
+	//}
 
 	sort($suggestedClasses);
 
 	//Array of classes that are suggested	
-	$arr = getClassInfo("CMSC", $suggestedClasses);
+	$arr = $suggestedClasses;//getClassInfo("CMSC", $suggestedClasses);
 	//Strips away illegal characters
   	
   	//
@@ -147,21 +199,21 @@
 		<?php
 			//Procedurally generates div blocks
 			$now = runtime();
-			foreach($suggestedClasses as $val){
-				$test =  $json->encode($arr[$val]);
+
+			foreach($suggestedClasses as $key => $val){
+				$test =  $json->encode($val);
 			echo("
 				
 				<div class='generated' onmouseover= 'show($test)' onmouseout= 'hide()'>
-					$val 
+					" . key($val) . "
 				</div>
 				");
 			}
 				$then = runtime();
-
-			echo("<br><br>Runtime: " . ($then - $now) . " Milliseconds");
 		?>
 
 	</div>
+	<?php 	echo("<span style='color:black;'><br><br>Runtime: " . (-$now + $then) . "</span> Milliseconds"); ?>
 	<div id="info">
 		<p id="content" style="overflow:auto;height:auto;width:100%">Here</p> 
 	</div>

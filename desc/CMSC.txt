@@ -7,6 +7,11 @@ techniques covered by this course include modularity, abstraction, top-down desi
 documentation, debugging and testing. The core material for this course includes control
 structures, functions, lists, strings, abstract data types, file I/O, and recursion.
 ^
+CMSC 457
+Quantum Computing
+(3.00)
+Description not available.
+^
 CMSC 202
 Computer Science II for Majors
 (4.00)
@@ -128,16 +133,6 @@ An introduction to the fundamentals of operating systems. Topics include interpr
 communication, process scheduling, deadlock, memory management, virtual memory, file systems and
 distributed systems. Formal principles are illustrated with examples and case studies of one or
 more contemporary operating systems.
-^
-CMSC 426
-Principles of Computer Security
-(3.00)
-This course will provide an introduction to computer security, with specific focus on the computing
-aspects. Topics covered will include: Basics of computer security including an overview of threat,
-attack, and adversary models; social engineering; essentials of cryptography; traditional computing
-security models; malicious software; secure programming; Operating system security in practice;
-trusted operating system design; public policy issues including legal, privacy, and ethical issues;
-network and database security overview.
 ^
 CMSC 427
 Wearable Computing
@@ -350,25 +345,6 @@ Computer Networks
 This course introduces the fundamentals of data communication and computer networking, including
 circuit and packet switching; network architectures and protocols; local/metropolitan/wide-area
 networks, OSI and TCP/IP standards; network programming and applications; and network management.
-^
-CMSC 483
-Parallel and Distributed Processing
-(3.00)
-This course provides a project and applications-oriented approach to parallel and distributed
-programming. Students will learn a specific parallel language and programming environment and will
-complete a large programming project. Topics include a selected parallel programming language, a
-survey of parallel and distributed architectures and associated programming styles, an introduction
-to parallel and distributed algorithms, and a study of trade-offs between computation and
-communication in parallel processing.
-^
-CMSC 493
-Capstone Games Group Project
-(3.00)
-The computer games capstone course is designed to allow students completing the computer science
-games track to engage in a complete group project development experience. This will help them to
-integrate the various technical concepts they have learned in earlier courses. The course aims to
-impart a foundation in team leadership and project management ability that will allow graduates to
-function effectively within multi-disciplinary teams.
 ^
 CMSC 465
 Introduction to Electronic Commerce

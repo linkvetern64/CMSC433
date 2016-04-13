@@ -76,7 +76,9 @@ body{
   filter: blur(2px);
 }
 
- 
+#staticInput{
+
+}
 
 #body{
   height:240px;
@@ -140,6 +142,25 @@ input.top{
     padding-left:5px;
 }
 
+input.top:focus{
+    outline:none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+input.middle:focus{
+    outline:none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+input.bottom:focus{
+    outline:none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 input.middle{
     width:300px;
     height:30px;

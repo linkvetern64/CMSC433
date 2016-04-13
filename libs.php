@@ -32,3 +32,8 @@ function runtime(){
 	return round(microtime(true) * 1000);
 }
 
+function getDesc($class){	 
+	connect();
+	$result = mysql_fetch_assoc(mysql_query("SELECT * FROM descriptions WHERE course = '$class'"));
+	return $result["desc"];
+}
