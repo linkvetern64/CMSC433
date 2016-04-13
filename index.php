@@ -16,7 +16,7 @@
 <body>
 	<div id="navbar">
 
-		<div class="navItemTop">CMSC</div>
+		<div class="navItemTop"><a href="#CMSC">CMSC</a></div>
 		<div class="navItem">BIO</div>
 		<div class="navItem">PHYS</div>
 		<div class="navItem"><a href="#MATH">MATH</a></div>
@@ -106,6 +106,8 @@
 		</div>
 		Click on courses you've taken.
 		<ul class="choice-list">
+			<a id="CMSC"></a>
+			<span style="color:white;font-size:3em;vertical-align: middle">CMSC</span><br>
 		    <label class="choice" for="201"><li class="checkbox _CMSC200 _201"></li></label>
 		    <label class="choice" for="202"><li class="checkbox _CMSC200 _202"></li></label>
 		    <label class="choice" for="203"><li class="checkbox _CMSC200 _203"></li></label>
@@ -171,6 +173,7 @@
 		    <hr>
 		    
 		   	<a id="MATH"></a>
+		   	<span style="color:white;font-size:3em;vertical-align: middle">MATH</span><br>
 			<label class="choice" for="MATH151"><li class="checkbox _MATH _M151"></li></label>
 		    <label class="choice" for="MATH152"><li class="checkbox _MATH _M152"></li></label>		    
 
