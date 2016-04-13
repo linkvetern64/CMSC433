@@ -73,7 +73,7 @@
 
 			foreach($suggestedClasses as $val){
 				$desc = $json->encode(getDesc(trim($val)));
-				$course = $val;
+				$course = preg_replace("/\D+/i", "", $val);
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 			}
 			echo("<span style='color:white;'>Runtime: " . -$now + runtime() . " milliseconds</span> <br>");

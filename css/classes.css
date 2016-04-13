@@ -8,6 +8,8 @@
 ._CMSC400.is-checked:after{background-color: #f14c38;}
  
 ._MATH.is-checked:after{background-color:#446CB3;}
+
+._CHEM.is-checked:after{background-color:#913D88;}
 /*.is-checked:after {background-color: #446CB3;} */
 
 /**CMSC 200 **/
@@ -68,6 +70,12 @@
 /** MATH **/
 ._M151:after{content: "151";}
 ._M152:after{content: "152";}
+
+
+/** CHEM **/
+._C101:after{content: "101";}
+._C102:after{content: "102";}
+._C102L:after{content: "102L";}
 /*  These are here because of the colors
 
   background-color: rgba(165, 194, 92, 0);
