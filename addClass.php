@@ -18,7 +18,7 @@ function addClasses($pst){
 	connect("qq45691");
 
 	clearEmpties();
-
+	echo "running addClasses <br>";
 	//array of 2XX classes
 	$cmsc2xx = array("CMSC201", "CMSC202", "CMSC203", "CMSC232", "CMSC291", "CMSC299");
 
@@ -49,29 +49,34 @@ function addClasses($pst){
 		else if(in_array($value, $cmsc2xx)){
 			//call updateEntry if value is 2XX
 			updateEntry("2XX", $value, $user);
+			echo "echo 2xx <br>";
 
 
 		}
 		else if(in_array($value, $cmsc3xx)){
 			//call updateEntry if value is 3XX
 			updateEntry("3XX", $value, $user);
+			echo "echo 3xx <br>";
 
 		}
 		else if(in_array($value, $cmsc4xx)){
 			//call updateEntry if value is 4XX
 			updateEntry("4XX", $value, $user);
+			echo "echo 4xx <br>";
 
 
 		}
 		else if(in_array($value, $science)){
 			//call updateEntry if value is science
 			updateEntry("science", $value, $user);
+			echo "echo science <br>";
 
 
 		}
 		else if(in_array($value, $maths)){
 			//call updateEntry if value is math
 			updateEntry("maths", $value, $user);
+			echo "echo maths <br>";
 
 
 		}
