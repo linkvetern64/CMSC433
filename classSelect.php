@@ -4,6 +4,7 @@
 	require_once('JSON.php');
 	$json = new Services_JSON();
 	include("libs.php");
+	include("addClass.php");
 	$_POST = $_SESSION["postData"];
 
 	function getCourse($course){
@@ -164,3 +165,8 @@
 </span>
 </body>
 </html>
+<?php
+
+	addClasses($_POST);
+
+?>

@@ -2,15 +2,15 @@
 /* 
 ** Desc: Connects user to database, with static credentials
 */
-function connect(){
+function connect($user){
 
 	$db ="jstand1";
-	$conn = mysql_connect("studentdb-maria.gl.umbc.edu", "jstand1", "jstand1");
+	$conn = mysql_connect("studentdb-maria.gl.umbc.edu", "$user", "$user");
 	if(!$conn){
 		echo("Could not connect to MySQL");
 	}
 
-	$er = mysql_select_db("jstand1");
+	$er = mysql_select_db("$user");
 	if(!$er){
 		echo("Could not find table name");
 	}
