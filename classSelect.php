@@ -52,6 +52,12 @@
 	//Make this associative array
 	$suggestedClasses = array();
 
+	if(empty($taken)){
+		array_push($suggestedClasses, "CMSC201");
+		array_push($suggestedClasses, "MATH151");
+		array_push($suggestedClasses, "CHEM101");
+	}
+
 	if(!empty($taken) && max($taken) >= 400){
 		array_push($taken, "CMSC4XX");
 	}
@@ -197,37 +203,42 @@ $pst = $_POST;
 	$first = $pst['firstName'];
 	$last = $pst['lastName'];
 	$email = $pst['email'];
-
-	$pst = $_POST['check_list'];
-	insertID($first, $last, $user, $email);
-	foreach($pst as $value){
-	 
-		//check for submit, do nothing if found
-		if($value == "Submit"){
-			continue;
-		}
-		else if(in_array($value, $cmsc2xx)){
-			//call updateEntry if value is 2XX
-			updateEntry("2XX", $value, $user);
-		}
-		else if(in_array($value, $cmsc3xx)){
-			//call updateEntry if value is 3XX
-			updateEntry("3XX", $value, $user);
-		}
-		else if(in_array($value, $cmsc4xx)){
-			//call updateEntry if value is 4XX
-			updateEntry("4XX", $value, $user);
-		}
-		else if(in_array($value, $science)){
-			//call updateEntry if value is science
-			updateEntry("SCIENCE", $value, $user);
-		}
-		else if(in_array($value, $maths)){
-			//call updateEntry if value is math
-			updateEntry("MATH", $value, $user);
-		}
+	if(!empty($_POST['check_list'])){
+		$pst = $_POST['check_list'];
 	}
-
+	else{
+		$pst = array("");
+	}
+	insertID($first, $last, $user, $email);
+	if(!empty($pst)){
+		foreach($pst as $value){
+		 
+			//check for submit, do nothing if found
+			if($value == "Submit"){
+				continue;
+			}
+			else if(in_array($value, $cmsc2xx)){
+				//call updateEntry if value is 2XX
+				updateEntry("2XX", $value, $user);
+			}
+			else if(in_array($value, $cmsc3xx)){
+				//call updateEntry if value is 3XX
+				updateEntry("3XX", $value, $user);
+			}
+			else if(in_array($value, $cmsc4xx)){
+				//call updateEntry if value is 4XX
+				updateEntry("4XX", $value, $user);
+			}
+			else if(in_array($value, $science)){
+				//call updateEntry if value is science
+				updateEntry("SCIENCE", $value, $user);
+			}
+			else if(in_array($value, $maths)){
+				//call updateEntry if value is math
+				updateEntry("MATH", $value, $user);
+			}
+		}
+}
 function clearEmpties(){
 	//remove blanks from all tables
 	$rs = mysql_query("DELETE FROM `2XX` WHERE `USER`=''");

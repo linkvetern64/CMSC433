@@ -3,8 +3,8 @@
 	session_start();
 	$errorFName = "Enter only letters";
 	$errorLName = "Enter only letters";
-	$errorEmail = "Enter as format xxx@umbc.edu";
-	$errorID = "Enter ID as AD12345";
+	$errorEmail = "Enter xxx@umbc.edu";
+	$errorID = 	  "Enter as ID AD12345";
 ?>
 
 <!DOCTYPE html>
