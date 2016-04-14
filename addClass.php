@@ -12,6 +12,7 @@
 
 
 include("libs.php");
+echo "page being used <br>";
 //runs algorithm to add classes to DBs
 function addClasses($pst){
 	//connect to server
