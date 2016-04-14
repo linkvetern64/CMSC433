@@ -93,6 +93,7 @@
 				if(strlen($desc) < 1){ $desc = "No description available";}
 				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
 				$major = preg_replace("/\d+./","",$val);
+				$course = $major . "<br>" . $course;
 				if(preg_replace("/\d+./","",$val) == "CMSC"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 				}
@@ -112,6 +113,7 @@
 				if(strlen($desc) < 1){ $desc = "No description available";}
 				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
 				$major = preg_replace("/\d+./","",$val);
+				$course = $major . "<br>" . $course;
 				if(preg_replace("/\d+./","",$val) == "MATH"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 				}
@@ -130,7 +132,7 @@
 				$desc = $json->encode(getDesc(trim($val)));
 				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
 				$major = preg_replace("/\d+./","",$val);
-				
+				$course = $major . "<br>" . $course;
 				if(strval($desc) == "null"){
 					$desc = $json->encode("No description available");
 				}
