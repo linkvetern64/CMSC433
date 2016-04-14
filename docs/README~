@@ -1,0 +1,32 @@
+
+Project Descrtiption
+
+	Allow a user to enter their currently taken classes, and based on that input
+	display the courses they can take next semester.
+
+Project Directories
+	/
+		The root directory of the project.  Contains the other project
+		directories. Most of the .php files are stored here as well.
+
+	css/
+		contains the CSS used for styling.
+
+	desc/
+		text files with class descriptions
+
+	doc/
+		The doc/ directory contains most of the project documentation and file
+		overviews.  A synopsis for all project files can be found in the doc/
+		directory.
+
+		/DB Tables/
+			This is a subdirectory of doc/ that contains information on the
+			structure of each database table used in this project.
+
+	images/
+		The image/ directory contains the background images used for the
+		website.
+
+	js/
+		contains some javascript used for styling pursoses
