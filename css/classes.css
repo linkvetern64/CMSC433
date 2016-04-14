@@ -12,6 +12,9 @@
 ._CHEM.is-checked:after{background-color:#913D88;}
 
 ._BIOL.is-checked:after{background-color:#E08283;}
+
+._PHYS.is-checked:after{background-color:#a5c25c;}
+._PHYSL.is-checked:after{background-color:#a5c25c;}
 /*.is-checked:after {background-color: #446CB3;} */
 
 /**CMSC 200 **/
@@ -85,6 +88,10 @@
 ._B141:after{content: "141";}
 ._B142:after{content: "142";}
 
+/** PHYS **/
+._P121:after{content: "121";}
+._P122:after{content: "122";}
+._P122L:after{content: "122L";font-size: 40px;}
 
 /*  These are here because of the colors
 

@@ -71,7 +71,7 @@
 				foreach($taken as $class){
 					if(array_key_exists($class, $classes)){
 						foreach($classes[$class] as $course){
-							if(!in_array($course, $suggestedClasses)){
+							if(!in_array($course, $suggestedClasses) && !in_array($course, $taken)){
 								$suggestedClasses["$course"] = $course;
 							}
 						} 
@@ -92,6 +92,7 @@
 				$desc = $json->encode(getDesc(trim($val)));
 				if(strlen($desc) < 1){ $desc = "No description available";}
 				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
+				$major = preg_replace("/\d+./","",$val);
 				if(preg_replace("/\d+./","",$val) == "CMSC"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 				}
@@ -110,6 +111,7 @@
 				$desc = $json->encode(getDesc(trim($val)));
 				if(strlen($desc) < 1){ $desc = "No description available";}
 				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
+				$major = preg_replace("/\d+./","",$val);
 				if(preg_replace("/\d+./","",$val) == "MATH"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 				}
@@ -130,9 +132,9 @@
 				$major = preg_replace("/\d+./","",$val);
 				
 				if(strval($desc) == "null"){
-					$desc = "No description available";
+					$desc = $json->encode("No description available");
 				}
-				$desc = $json->encode($desc);
+
 
 				if($major != "CMSC" && $major != "MATH"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");

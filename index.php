@@ -1,6 +1,10 @@
 <?php
 	
 	session_start();
+	$errorFName = "Enter only letters";
+	$errorLName = "Enter only letters";
+	$errorEmail = "Enter as format xxx@umbc.edu";
+	$errorID = "Enter ID as AD12345";
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +22,9 @@
 
 		<div class="navItemTop"><a href="#CMSC">CMSC</a></div>
 		<div class="navItem"><a href="#BIOL">BIOL</a></div>
-		<div class="navItem">PHYS</div>
+		<div class="navItem"><a href="#PHYS">PHYS</a></div>
 		<div class="navItem"><a href="#MATH">MATH</a></div>
-		<div class="navItem"><a href="#CHEM">CHEM</a></div>
+		<div class="navItemBottom"><a href="#CHEM">CHEM</a></div>
 	</div>
 
 	<img id="img1" src="images/bg3.png" />
@@ -112,8 +116,12 @@
 		    <input type="checkbox" name="check_list[]" value="BIOL141" id="BIOL141" />		  
 		    <input type="checkbox" name="check_list[]" value="BIOL142" id="BIOL142" />
 
+		    <input type="checkbox" name="check_list[]" value="PHYS121" id="PHYS121" />
+		    <input type="checkbox" name="check_list[]" value="PHYS122" id="PHYS122" />		  
+		    <input type="checkbox" name="check_list[]" value="PHYS122L" id="PHYS122L" />
+
 		</div>
-		Click on courses you've taken.
+		<span style="font-style: italic;font-size:1.3em;text-decoration: underline;">Click on courses you've taken.</span>
 		<ul class="choice-list">
 			<a id="CMSC"></a>
 			<span style="color:white;font-size:3em;vertical-align: middle">CMSC</span><br>
@@ -121,14 +129,14 @@
 		    <label class="choice" for="202"><li class="checkbox _CMSC200 _202"></li></label>
 		    <label class="choice" for="203"><li class="checkbox _CMSC200 _203"></li></label>
 		    <br />
-		    <hr>
+	 
 			
 		    <label class="choice" for="304" ><li class="checkbox _CMSC300 _304" ></li></label>
 		    <label class="choice" for="313" ><li class="checkbox _CMSC300 _313" ></li></label>
 		    <label class="choice" for="331" ><li class="checkbox _CMSC300 _331" ></li></label>
 		    <label class="choice" for="341" ><li class="checkbox _CMSC300 _341" ></li></label>
 		    <br />
-		    <hr>
+		     
 	    
 		    <label class="choice" for="411" ><li class="checkbox _CMSC400 _411" ></li></label>
 		    <label class="choice" for="421" ><li class="checkbox _CMSC400 _421" ></li></label>
@@ -204,6 +212,13 @@
 		    <br />
 		    <hr>
 
+			<a id="PHYS"></a>		    
+		   	<span style="color:white;font-size:3em;vertical-align: middle">PHYS</span><br>
+			<label class="choice" for="PHYS121"><li class="checkbox _PHYS _P121"></li></label>
+		    <label class="choice" for="PHYS122"><li class="checkbox _PHYS _P122"></li></label>	
+		    <label class="choice" for="PHYS122L"><li class="checkbox _PHYSL _P122L"></li></label>		    
+		    <br />
+		    <hr>
 
 		</ul>
 		<button class="button"  style="vertical-align:middle"><span>Submit &nbsp;</span></button>
