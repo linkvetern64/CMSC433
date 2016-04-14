@@ -9,61 +9,108 @@
 <body>
 <div id="main">
 <?php
+//session_start();
 
-include('CommonMethods.php');
-$COMMON = new COMMON($debug);
-$debug = false;
 
-$cmsc2xx = array("201", "202", "203", "232", "291", "299");
+include("libs.php");
+//connect to server
+connect();
 
-$cmsc3xx = array("304", "313", "331", "341", "352", "391");
+clearEmpties();
 
-$cmsc4xx = array("404", "411", "421", "426", "427", "431", "432", "433", "435", "436", "437", "441", "442", "443", "444", "446", "447", "448", "451", "452", "453", "455", "456", "457", "461", "465", "466", "471", "473", "475", "476", "477", "478", "479", "481", "483", "484", "487", "491", "493", "495", "498", "499");
+//array of 2XX classes
+$cmsc2xx = array("CMSC201", "CMSC202", "CMSC203", "CMSC232", "CMSC291", "CMSC299");
 
-$sql = "INSERT INTO `qq45691`.`2XX` (`USER`) VALUES ('$_POST[id]')";
-$rs = $COMMON->executeQuery($sql, $_SERVER['Script_Name']);
+//array of 3XX classes
+$cmsc3xx = array("CMSC304", "CMSC313", "CMSC331", "CMSC341", "CMSC352", "CMSC391");
 
-$sql = "INSERT INTO `qq45691`.`3XX` (`USER`) VALUES ('$_POST[id]');
-$rs = $COMMON->executeQuery($sql, $_SERVER["Script_Name"]);
+//array of 4XX classes
+$cmsc4xx = array("CMSC404", "CMSC411", "CMSC421", "CMSC426", "CMSC427", "CMSC431", "CMSC432", "CMSC433", "CMSC435", "CMSC436", "CMSC437", "CMSC441", "CMSC442", "CMSC443", "CMSC444", "446", "CMSC447", "CMSC448", "CMSC451", "CMSC452", "CMSC453", "CMSC455", "CMSC456", "CMSC457", "CMSC461", "CMSC465", "CMSC466", "CMSC471", "CMSC473", "CMSC475", "CMSC476", "CMSC477", "478", "CMSC479", "CMSC481", "CMSC483", "CMSC484", "CMSC487", "CMSC491", "CMSC493", "CMSC495", "CMSC498", "CMSC499");
 
-$sql = "INSERT INTO `qq45691`.`4XX` (`USER`) VALUES ('$_POST[id]');
-$rs = $COMMON->executeQuery($sql, $_SERVER["Script_Name"]);
+//array of math classes
+$maths = array("MATH151","MATH152","MATH221","MATH251","MATH301","MATH430","MATH441","MATH452","MATH475","MATH481","MATH483","STAT355","STAT451");
+//array of science classes
+$science = array("BIOL141", "BIOL142", "CHEM101", "CHEM102", "PHYS121", "PHYS122",
+	"BIOL251", "BIOL251L", "BIOL252", "BIOL252L", "BIOL275", "BIOL275L", "BIOL301", "BIOL302L", "BIOL303", "BIOL303L", "BIOL304", "BIOL304L", "BIOL305", "BIOL305L", "CHEM102L", "GES110", "GES111", "GES120", "PHYS122L", "PHYS224", "PHYS304");
 
-//take names from pool and put into array
-$id = $_POST['id'];
-$taken = $_POST['taken'];
-$req = $_POST['required'];
-$wi = $_POST['wi'];
-$elec = $_POST['elective'];
+//user ID
+$user = $_POST['id'];
 
-$cmsc = "CMSC";
-$class = $cmsc . $taken;
+foreach($_POST as $value){
+	//check for submit, do nothing if found
+	if($value == "Submit"){
+		continue;
+	}
+	else if(in_array($value, $cmsc2xx)){
+		//call updateEntry if value is 2XX
+		updateEntry("2XX", $value, $user);
 
-//check if entered class exists
 
-if (inarray($taken, $cmsc2xx)){
-	echo "2xx";
-	$sql = "UPDATE `qq45691`.`2XX` SET '$class' = 1 WHERE `USER` = '$id'";
-	
-	
+	}
+	else if(in_array($value, $cmsc3xx)){
+		//call updateEntry if value is 3XX
+		updateEntry("3XX", $value, $user);
+
+	}
+	else if(in_array($value, $cmsc4xx)){
+		//call updateEntry if value is 4XX
+		updateEntry("4XX", $value, $user);
+
+
+	}
+	else if(in_array($value, $science)){
+		//call updateEntry if value is science
+		updateEntry("science", $value, $user);
+
+
+	}
+	else if(in_array($value, $maths)){
+		//call updateEntry if value is math
+		updateEntry("maths", $value, $user);
+
+
+	}
+	else{
+		//value is not class or submit, enter ID num into all tables for updating
+		insertID();
+	}
+
 }
-else if(inarray($taken, $cmsc3xx)){
-	echo"3xx";
-	$sql = "UPDATE `qq45691`.`3XX` SET '$class' = 1 WHERE `USER` = '$id'";
-	
-}
-else if(inarray($taken, $cmsc4xx)){
-	echo"4xx";
-	$sql = "UPDATE `qq45691`.`4XX` SET '$class' = 1 WHERE `USER` = '$id'";
-	
-}
-else{
-	echo "class does not exist\n";
-	//redirect to fill out page with new message 
+
+function clearEmpties(){
+	//remove blanks from all tables
+	$rs = mysql_query("DELETE FROM `2XX` WHERE `USER`=''");
+	$rs = mysql_query("DELETE FROM `3XX` WHERE `USER`=''");
+	$rs = mysql_query("DELETE FROM `4XX` WHERE `USER`=''");
+	$rs = mysql_query("DELETE FROM `SCIENCE` WHERE `USER`=''");
+	$rs = mysql_query("DELETE FROM `MATH` WHERE `USER`=''");
+	$rs = mysql_query("DELETE FROM `UserInfo` WHERE `USER`=''");
 }
 
-$rs = $COMMON->executeQuery($sql, $_SERVER["Script_Name"]);	
- 
+function updateEntry($db, $col, $key){
+	//run update query to siginify taken class
+	$rs = mysql_query("UPDATE  `$db` SET  `$col` = 1 WHERE  `USER` =  '$key'");
+		if(!rs){
+ 		 die("Invalid query<br>");
+		}
+
+}
+
+function insertID(){
+	//add ID to all tables for later updating, no duplicate (IGNORE)
+	$rs = mysql_query("INSERT INTO `2XX` (`USER`) VALUES ('$user')");
+	//$rs = mysql_query("INSERT INTO `2XX` (`USER`) VALUES ('$id') ON DUPLICATE KEY UPDATE `USER` = '$id'");
+	$rs = mysql_query("INSERT IGNORE INTO `3XX` (`USER`) VALUES ('$user')");
+	$rs = mysql_query("INSERT IGNORE INTO `4XX` (`USER`) VALUES ('$user')");
+	$rs = mysql_query("INSERT IGNORE INTO `MATH` (`USER`) VALUES ('$user')");
+	$rs = mysql_query("INSERT IGNORE INTO `SCIENCE` (`USER`) VALUES ('$user')");
+	$rs = mysql_query("INSERT IGNORE INTO `UserInfo` (`USER`) VALUES ('$user')");
+	
+
+
+}
+clearEmpties();
+disconnect();
 ?>
 </div>
 </body>
