@@ -48,9 +48,18 @@
 		"CMSC4XX" => array(	"CMSC447" ,"CMSC448"));
 
 	$taken = $_POST['check_list'];
-
-	//Make this associative array
 	$suggestedClasses = array();
+	if(!in_array("MATH151", $taken)){
+		array_push($suggestedClasses, "MATH151");
+	}
+	if(!in_array("CMSC201", $taken)){
+		array_push($suggestedClasses, "CMSC201");
+	}
+	if(!in_array("PHYS121", $taken)){
+		array_push($suggestedClasses, "PHYS121");
+	}
+	//Make this associative array
+	
 
 	if(!empty($taken) && max($taken) >= 400){
 		array_push($taken, "CMSC4XX");
