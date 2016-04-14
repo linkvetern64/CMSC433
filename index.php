@@ -21,10 +21,11 @@
 	<div id="navbar">
 		<div class="navItemTop"><a href="#CMSC">CMSC</a></div>
 		<div class="navItem"><a href="#BIOL">BIOL</a></div>
+		<div class="navItem"><a href="#CHEM">CHEM</a></div>
+		<div class="navItem"><a href="#GES">GES</a></div>
 		<div class="navItem"><a href="#PHYS">PHYS</a></div>
 		<div class="navItem"><a href="#MATH">MATH</a></div>
-		<div class="navItem"><a href="#STAT">STAT</a></div>
-		<div class="navItemBottom"><a href="#CHEM">CHEM</a></div>
+		<div class="navItemBottom"><a href="#STAT">STAT</a></div>
 	</div>
 
 	<img id="img1" src="images/bg3.png" />
@@ -36,13 +37,13 @@
 	 		<div id="staticInput">
 			<form method="POST" action="validate.php">
 				<input type="text" name="firstName" class="top" placeholder="First Name"/>	
-				<?php if($_SESSION["validFN"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				<?php if($_SESSION["validFN"]){echo("<span style='color:red;'>*$errorFName</span>");} ?><br />
 				<input type="text" name="lastName" placeholder="Last Name" class="middle"/>	
-				<?php if($_SESSION["validLN"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				<?php if($_SESSION["validLN"]){echo("<span style='color:red;'>*$errorLName</span>");} ?><br />
 				<input type="text" name="umbcID" placeholder="UMBC ID" class="middle"/>		
-				<?php if($_SESSION["validID"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				<?php if($_SESSION["validID"]){echo("<span style='color:red;'>*$errorEmail</span>");} ?><br />
 				<input type="text" name="email" placeholder="Email" class="bottom"/>		
-				<?php if($_SESSION["validE"]){echo("<span style='color:red;'>*Only #'s, or not empty</span>");} ?><br />
+				<?php if($_SESSION["validE"]){echo("<span style='color:red;'>*$errorID</span>");} ?><br />
 				
 			</div>
 				 <a class="button"  style="vertical-align:middle;" href="#checkboxes"><span>Next &nbsp;</span></a>
@@ -107,6 +108,8 @@
 
 		    <input type="checkbox" name="check_list[]" value="MATH151" id="MATH151" />
 		    <input type="checkbox" name="check_list[]" value="MATH152" id="MATH152" />
+		    <input type="checkbox" name="check_list[]" value="MATH221" id="MATH221" />
+		    <input type="checkbox" name="check_list[]" value="MATH251" id="MATH251" />
 
 		    <input type="checkbox" name="check_list[]" value="CHEM101" id="CHEM101" />
 		    <input type="checkbox" name="check_list[]" value="CHEM102" id="CHEM102" />		  
@@ -117,6 +120,7 @@
 		    <input type="checkbox" name="check_list[]" value="BIOL142" id="BIOL142" />
 
 		    <input type="checkbox" name="check_list[]" value="PHYS121" id="PHYS121" />
+		    <input type="checkbox" name="check_list[]" value="PHYS121L" id="PHYS121L" />
 		    <input type="checkbox" name="check_list[]" value="PHYS122" id="PHYS122" />		  
 		    <input type="checkbox" name="check_list[]" value="PHYS122L" id="PHYS122L" />
 
@@ -191,11 +195,12 @@
 		    <label class="choice" for="499" ><li class="checkbox _CMSC400 _499" ></li></label>
 		    <br />
 		    <hr>
-		    
-		   	<a id="MATH"></a>
-		   	<span style="color:white;font-size:3em;vertical-align: middle">MATH</span><br>
-			<label class="choice" for="MATH151"><li class="checkbox _MATH _M151"></li></label>
-		    <label class="choice" for="MATH152"><li class="checkbox _MATH _M152"></li></label>		    
+
+		    <a id="BIOL"></a>		    
+		   	<span style="color:white;font-size:3em;vertical-align: middle">BIOL</span><br>
+			<label class="choice" for="BIOL141"><li class="checkbox _BIOL _B141"></li></label>
+		    <label class="choice" for="BIOL142"><li class="checkbox _BIOL _B142"></li></label>	
+		    <label class="choice" for="BIOL100L"><li class="checkbox _BIOL _B100L"></li></label>		    
 		    <br />
 		    <hr>
 
@@ -207,19 +212,32 @@
 		    <br />
 		    <hr>
 
-		    <a id="BIOL"></a>		    
-		   	<span style="color:white;font-size:3em;vertical-align: middle">BIOL</span><br>
-			<label class="choice" for="BIOL141"><li class="checkbox _BIOL _B141"></li></label>
-		    <label class="choice" for="BIOL142"><li class="checkbox _BIOL _B142"></li></label>	
-		    <label class="choice" for="BIOL100L"><li class="checkbox _BIOL _B100L"></li></label>		    
+
+		    <a id="GES"></a>		    
+		   	<span style="color:white;font-size:3em;vertical-align: middle">GES</span><br>
+			<label class="choice" for="GES110"><li class="checkbox _GES _G110"></li></label>	
+			<label class="choice" for="GES111"><li class="checkbox _GES _G111"></li></label>
+			<label class="choice" for="GES120"><li class="checkbox _GES _G120"></li></label>
+			<label class="choice" for="GES286"><li class="checkbox _GES _G286"></li></label>	
 		    <br />
 		    <hr>
 
 			<a id="PHYS"></a>		    
 		   	<span style="color:white;font-size:3em;vertical-align: middle">PHYS</span><br>
 			<label class="choice" for="PHYS121"><li class="checkbox _PHYS _P121"></li></label>
+		    <label class="choice" for="PHYS121L"><li class="checkbox _PHYSL _P121L"></li></label>
 		    <label class="choice" for="PHYS122"><li class="checkbox _PHYS _P122"></li></label>	
 		    <label class="choice" for="PHYS122L"><li class="checkbox _PHYSL _P122L"></li></label>		    
+		    <br />
+		    <hr>
+
+		    
+		   	<a id="MATH"></a>
+		   	<span style="color:white;font-size:3em;vertical-align: middle">MATH</span><br>
+			<label class="choice" for="MATH151"><li class="checkbox _MATH _M151"></li></label>
+		    <label class="choice" for="MATH152"><li class="checkbox _MATH _M152"></li></label>	
+			<label class="choice" for="MATH211"><li class="checkbox _MATH _M221"></li></label>
+		    <label class="choice" for="MATH251"><li class="checkbox _MATH _M251"></li></label>	    
 		    <br />
 		    <hr>
 
@@ -229,9 +247,8 @@
 			<label class="choice" for="STAT451"><li class="checkbox _STAT _S451"></li></label>	
 		    <br />
 		    <hr>
-
 		</ul>
-		<button class="button"  style="vertical-align:middle"><span>Submit &nbsp;</span></button>
+		<button class="button"  style="vertical-align:middle;color:white;"><span>Submit &nbsp;</span></button>
 		</form>
 	</div>
 	<!--<div  id="footer"></div>-->

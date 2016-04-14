@@ -17,13 +17,17 @@
 ._PHYSL.is-checked:after{background-color:#a5c25c;}
 
 ._STAT.is-checked:after{background-color:#E08283;}
+
+._GES.is-checked:after{background-color:#E08283;}
 /*.is-checked:after {background-color: #446CB3;} */
 
 /**CMSC 200 **/
 ._201:after {content: "201";}
 ._202:after {content: "202";}
 ._203:after {content: "203";}
-
+._232:after {content: "232";}
+._291:after {content: "291";}
+._299:after {content: "299";}
 /**CMSC 300 **/
 ._304:after {content: "304";}
 ._313:after {content: "313";}
@@ -77,6 +81,8 @@
 /** MATH **/
 ._M151:after{content: "151";}
 ._M152:after{content: "152";}
+._M221:after{content: "221";}
+._M251:after{content: "251";}
 
 
 /** CHEM **/
@@ -91,6 +97,7 @@
 ._B142:after{content: "142";}
 
 /** PHYS **/
+._P121L:after{content: "121L";font-size: 40px;}
 ._P121:after{content: "121";}
 ._P122:after{content: "122";}
 ._P122L:after{content: "122L";font-size: 40px;}
@@ -99,6 +106,11 @@
 ._S355:after{content: "355";}
 ._S451:after{content: "451";}
 
+/** GES **/
+._G110:after{content: "110";}
+._G111:after{content: "111";}
+._G120:after{content: "120";}
+._G286:after{content: "286";}
 /*  These are here because of the colors
 
   background-color: rgba(165, 194, 92, 0);

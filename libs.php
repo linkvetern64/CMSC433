@@ -3,7 +3,6 @@
 ** Desc: Connects user to database, with static credentials
 */
 function connect($user){
-
 	$db ="$user";
 	$conn = mysql_connect("studentdb-maria.gl.umbc.edu", "$user", "$user");
 	if(!$conn){
@@ -34,7 +33,7 @@ function runtime(){
 }
 
 function getDesc($class){	 
-	connect();
+	connect("jstand1");
 	$result = mysql_fetch_assoc(mysql_query("SELECT * FROM descriptions WHERE course = '$class'"));
 	return $result["desc"];
 }
