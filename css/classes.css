@@ -28,15 +28,20 @@
 ._232:after {content: "232";}
 ._291:after {content: "291";}
 ._299:after {content: "299";}
+
 /**CMSC 300 **/
 ._304:after {content: "304";}
 ._313:after {content: "313";}
 ._331:after {content: "331";}
 ._341:after {content: "341";}
+._352:after {content: "352";}
+._391:after {content: "399";}
 
 /**CMSC 400 **/
+._404:after {content: "404";}
 ._411:after {content: "411";}
 ._421:after {content: "421";}
+._426:after {content: "426";}
 ._427:after {content: "427";}
 ._431:after {content: "431";}
 ._432:after {content: "432";}

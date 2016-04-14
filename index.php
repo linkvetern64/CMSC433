@@ -135,6 +135,9 @@
 		    <label class="choice" for="201"><li class="checkbox _CMSC200 _201"></li></label>
 		    <label class="choice" for="202"><li class="checkbox _CMSC200 _202"></li></label>
 		    <label class="choice" for="203"><li class="checkbox _CMSC200 _203"></li></label>
+		    <label class="choice" for="232"><li class="checkbox _CMSC200 _232"></li></label>
+		    <label class="choice" for="291"><li class="checkbox _CMSC200 _291"></li></label>
+		    <label class="choice" for="299"><li class="checkbox _CMSC200 _299"></li></label>
 		    <br />
 	 
 			
@@ -142,11 +145,14 @@
 		    <label class="choice" for="313" ><li class="checkbox _CMSC300 _313" ></li></label>
 		    <label class="choice" for="331" ><li class="checkbox _CMSC300 _331" ></li></label>
 		    <label class="choice" for="341" ><li class="checkbox _CMSC300 _341" ></li></label>
+		    <label class="choice" for="352" ><li class="checkbox _CMSC300 _352" ></li></label>
+		    <label class="choice" for="391" ><li class="checkbox _CMSC300 _391" ></li></label>
 		    <br />
 		     
-	    
+	    	<label class="choice" for="404" ><li class="checkbox _CMSC400 _404" ></li></label>
 		    <label class="choice" for="411" ><li class="checkbox _CMSC400 _411" ></li></label>
 		    <label class="choice" for="421" ><li class="checkbox _CMSC400 _421" ></li></label>
+		    <label class="choice" for="426" ><li class="checkbox _CMSC400 _426" ></li></label>
 		    <label class="choice" for="427" ><li class="checkbox _CMSC400 _427" ></li></label>
 		    <label class="choice" for="431" ><li class="checkbox _CMSC400 _431" ></li></label>
 		    <label class="choice" for="432" ><li class="checkbox _CMSC400 _432" ></li></label>
