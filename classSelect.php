@@ -5,6 +5,8 @@
 	$json = new Services_JSON();
 	include("libs.php");
 	$_POST = $_SESSION["postData"];
+	require("addClass.php");
+
 
 	function getCourse($course){
 		return preg_replace("/[A-z]{3,4}/i", "", $course);
@@ -164,3 +166,7 @@
 </span>
 </body>
 </html>
+
+<?php
+	addClasses($_POST);
+?>
