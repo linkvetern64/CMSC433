@@ -10,6 +10,8 @@
 ._MATH.is-checked:after{background-color:#446CB3;}
 
 ._CHEM.is-checked:after{background-color:#913D88;}
+
+._BIOL.is-checked:after{background-color:#E08283;}
 /*.is-checked:after {background-color: #446CB3;} */
 
 /**CMSC 200 **/
@@ -76,6 +78,14 @@
 ._C101:after{content: "101";}
 ._C102:after{content: "102";}
 ._C102L:after{content: "102L";}
+
+
+/** BIOL **/
+._B100L:after{content: "100L";}
+._B141:after{content: "141";}
+._B142:after{content: "142";}
+
+
 /*  These are here because of the colors
 
   background-color: rgba(165, 194, 92, 0);

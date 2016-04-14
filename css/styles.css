@@ -101,9 +101,9 @@ body{
 #classBody{
   height:auto;
   margin-left:10%;
-  width:80%;
+  width:auto;
   text-align:center;
-  background-color: rgba(80,80,80,0.65) ;   
+  background-color: rgba(35,52,69, .95);  
   border-radius:10px;
   padding-top:75px;
  

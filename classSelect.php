@@ -9,13 +9,20 @@
 	$classes = array(
 
 		"CHEM101" => array("CHEM102" ),
-		"CHEM102" => array("CHEM102L"),
+		"CHEM102" => array("CHEM102L", "BIOL141"),
+		"CHEM102L" => array("GES110"),
 
+		"BIOL141" => array("BIOL142", "BIOL100L", "PHYS121L", ),
  
-		"MATH151" => array("MATH152" ),
-		"MATH152" => array("MATH251" ),
+		"BIOL100L" => array("PHYS121"),
 
- 
+		"MATH151" => array("MATH152", "MATH221"),
+		"MATH152" => array("MATH251", "STAT355"),
+
+ 		"PHYS121" => array("PHYS122", "PHYS122L"),
+ 		"PHYS122" => array("PHYS122L", "GES286L"),
+ 		"PHYS122L" => array("MATH251"),
+
 		"CMSC201" => array(	"CMSC202" ),
 		"CMSC202" => array(	"CMSC203" ,"CMSC304" ,"CMSC484" ,"CMSC486"),
 		"CMSC203" => array(	"CMSC313" ,"CMSC331" ,"CMSC341" ,"CMSC451" ,"CMSC452" ,"CMSC457" ),
@@ -54,36 +61,92 @@
 		}
 	</script>
 </head>
-<body>
+<body style="background-image:url(images/bg.png);">
 <br><br>
 <div id="wrapper">
+	<div id="max">
 	<div id="contain">
 		<?php
-			$now = runtime();
  			if(!empty($taken)){
 				foreach($taken as $class){
 					if(array_key_exists($class, $classes)){
 						foreach($classes[$class] as $course){
-							$suggestedClasses["$course"] = $course;
+							if(!in_array($course, $suggestedClasses)){
+								$suggestedClasses["$course"] = $course;
+							}
 						} 
 					}
 				}	
 			}
 			sort($suggestedClasses);
 
+
+
+			echo("
+				<span style='color:white;font-size:3em;vertical-align: middle;'>CMSC: </span><br>
+				<hr>
+
+				");
+
 			foreach($suggestedClasses as $val){
 				$desc = $json->encode(getDesc(trim($val)));
-				$course = preg_replace("/\D+/i", "", $val);
+				if(strlen($desc) < 1){ $desc = "No description available";}
+				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
+				if(preg_replace("/\d+./","",$val) == "CMSC"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
+				}
 			}
-			echo("<span style='color:white;'>Runtime: " . -$now + runtime() . " milliseconds</span> <br>");
+
+
+
+			echo("
+				<br><br>
+				<span style='color:white;font-size:3em;vertical-align: middle;'>MATH: </span><br>
+				<hr>
+
+				");
+
+			foreach($suggestedClasses as $val){
+				$desc = $json->encode(getDesc(trim($val)));
+				if(strlen($desc) < 1){ $desc = "No description available";}
+				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
+				if(preg_replace("/\d+./","",$val) == "MATH"){
+				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
+				}
+			}
+
+
+			
+			echo("
+				<br><br>
+				<span style='color:white;font-size:3em;vertical-align: middle;'>SCI: </span><br>
+				<hr>
+
+				");
+
+			foreach($suggestedClasses as $val){
+				$desc = $json->encode(getDesc(trim($val)));
+				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
+				$major = preg_replace("/\d+./","",$val);
+				
+				if(strval($desc) == "null"){
+					$desc = "No description available";
+				}
+				$desc = $json->encode($desc);
+
+				if($major != "CMSC" && $major != "MATH"){
+				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
+				}
+			}
+
 		?>
 	</div>
+	</div>
 	<div id="info">
-		<p id="content" style="overflow:auto;height:auto;width:100%">Here</p> 
+		<p id="content" style="overflow:auto;height:auto;width:50%"></p> 
 	</div>
 </div>
-
-<a style="float:left;height:auto;" href="index.php">Home</a>
+<br><br><br><br><br><br>
+<a style="vertical-align: middle;" href="index.php">Home</a>
 </body>
 </html>

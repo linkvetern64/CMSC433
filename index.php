@@ -17,7 +17,7 @@
 	<div id="navbar">
 
 		<div class="navItemTop"><a href="#CMSC">CMSC</a></div>
-		<div class="navItem">BIO</div>
+		<div class="navItem"><a href="#BIOL">BIOL</a></div>
 		<div class="navItem">PHYS</div>
 		<div class="navItem"><a href="#MATH">MATH</a></div>
 		<div class="navItem"><a href="#CHEM">CHEM</a></div>
@@ -108,6 +108,10 @@
 		    <input type="checkbox" name="check_list[]" value="CHEM102" id="CHEM102" />		  
 		    <input type="checkbox" name="check_list[]" value="CHEM102L" id="CHEM102L" />
 
+		    <input type="checkbox" name="check_list[]" value="BIOL100L" id="BIOL100L" />
+		    <input type="checkbox" name="check_list[]" value="BIOL141" id="BIOL141" />		  
+		    <input type="checkbox" name="check_list[]" value="BIOL142" id="BIOL142" />
+
 		</div>
 		Click on courses you've taken.
 		<ul class="choice-list">
@@ -189,6 +193,14 @@
 			<label class="choice" for="CHEM101"><li class="checkbox _CHEM _C101"></li></label>
 		    <label class="choice" for="CHEM102"><li class="checkbox _CHEM _C102"></li></label>	
 		    <label class="choice" for="CHEM102L"><li class="checkbox _CHEM _C102L"></li></label>		    
+		    <br />
+		    <hr>
+
+		    <a id="BIOL"></a>		    
+		   	<span style="color:white;font-size:3em;vertical-align: middle">BIOL</span><br>
+			<label class="choice" for="BIOL141"><li class="checkbox _BIOL _B141"></li></label>
+		    <label class="choice" for="BIOL142"><li class="checkbox _BIOL _B142"></li></label>	
+		    <label class="choice" for="BIOL100L"><li class="checkbox _BIOL _B100L"></li></label>		    
 		    <br />
 		    <hr>
 
