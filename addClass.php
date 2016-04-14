@@ -15,7 +15,7 @@ include("libs.php");
 //runs algorithm to add classes to DBs
 function addClasses($pst){
 	//connect to server
-	Dconnect();
+	connect("qq45691");
 
 	clearEmpties();
 
@@ -115,7 +115,7 @@ function insertID(){
 
 }
 clearEmpties();
-Ddisconnect();
+disconnect("qq45691");
 ?>
 </div>
 </body>
