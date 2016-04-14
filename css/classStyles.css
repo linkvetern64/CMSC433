@@ -1,5 +1,6 @@
 #wrapper{
 	height:auto;
+	min-width:4000px;
 }
 
 #contain{
@@ -9,7 +10,7 @@
 	max-height: 70%;
 	max-width: 60%;
 	overflow-y:scroll;
-	background-color:none;
+	min-width:50%;
 	clear:left;
 	clear:right;
 	position:fixed;
