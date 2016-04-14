@@ -19,11 +19,11 @@
 </head>
 <body>
 	<div id="navbar">
-
 		<div class="navItemTop"><a href="#CMSC">CMSC</a></div>
 		<div class="navItem"><a href="#BIOL">BIOL</a></div>
 		<div class="navItem"><a href="#PHYS">PHYS</a></div>
 		<div class="navItem"><a href="#MATH">MATH</a></div>
+		<div class="navItem"><a href="#STAT">STAT</a></div>
 		<div class="navItemBottom"><a href="#CHEM">CHEM</a></div>
 	</div>
 
@@ -119,6 +119,9 @@
 		    <input type="checkbox" name="check_list[]" value="PHYS121" id="PHYS121" />
 		    <input type="checkbox" name="check_list[]" value="PHYS122" id="PHYS122" />		  
 		    <input type="checkbox" name="check_list[]" value="PHYS122L" id="PHYS122L" />
+
+		    <input type="checkbox" name="check_list[]" value="STAT355" id="STAT355" />		  
+		    <input type="checkbox" name="check_list[]" value="STAT451" id="STAT451" />
 
 		</div>
 		<span style="font-style: italic;font-size:1.3em;text-decoration: underline;">Click on courses you've taken.</span>
@@ -217,6 +220,13 @@
 			<label class="choice" for="PHYS121"><li class="checkbox _PHYS _P121"></li></label>
 		    <label class="choice" for="PHYS122"><li class="checkbox _PHYS _P122"></li></label>	
 		    <label class="choice" for="PHYS122L"><li class="checkbox _PHYSL _P122L"></li></label>		    
+		    <br />
+		    <hr>
+
+		    <a id="STAT"></a>		    
+		   	<span style="color:white;font-size:3em;vertical-align: middle">STAT</span><br>
+			<label class="choice" for="STAT355"><li class="checkbox _STAT _S355"></li></label>	
+			<label class="choice" for="STAT451"><li class="checkbox _STAT _S451"></li></label>	
 		    <br />
 		    <hr>
 

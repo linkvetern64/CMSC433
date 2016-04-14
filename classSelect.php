@@ -6,6 +6,14 @@
 	include("libs.php");
 	$_POST = $_SESSION["postData"];
 
+	function getCourse($course){
+		return preg_replace("/[A-z]{3,4}/i", "", $course);
+	}
+
+	function getMajor($course){
+		return preg_replace("/\d+./","",$course);
+	}
+
 	$classes = array(
 
 		"CHEM101" => array("CHEM102" ),
@@ -91,9 +99,8 @@
 			foreach($suggestedClasses as $val){
 				$desc = $json->encode(getDesc(trim($val)));
 				if(strlen($desc) < 1){ $desc = "No description available";}
-				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
-				$major = preg_replace("/\d+./","",$val);
-				$course = $major . "<br>" . $course;
+				$major = getMajor($val);
+				$course = $major . "<br>" . getCourse($val);
 				if(preg_replace("/\d+./","",$val) == "CMSC"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 				}
@@ -111,10 +118,9 @@
 			foreach($suggestedClasses as $val){
 				$desc = $json->encode(getDesc(trim($val)));
 				if(strlen($desc) < 1){ $desc = "No description available";}
-				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
-				$major = preg_replace("/\d+./","",$val);
-				$course = $major . "<br>" . $course;
-				if(preg_replace("/\d+./","",$val) == "MATH"){
+				$major = getMajor($val);
+				$course = $major . "<br>" . getCourse($val);
+				if(preg_replace("/\d+./","",$val) == "MATH" || preg_replace("/\d+./","",$val) == "STAT") {
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 				}
 			}
@@ -130,15 +136,14 @@
 
 			foreach($suggestedClasses as $val){
 				$desc = $json->encode(getDesc(trim($val)));
-				$course = preg_replace("/[A-z]{3,4}/i", "", $val);
-				$major = preg_replace("/\d+./","",$val);
-				$course = $major . "<br>" . $course;
+				$major = getMajor($val);
+				$course = $major . "<br>" . getCourse($val);
 				if(strval($desc) == "null"){
 					$desc = $json->encode("No description available");
 				}
 
 
-				if($major != "CMSC" && $major != "MATH"){
+				if($major != "CMSC" && $major != "MATH"  && $major != "STAT"){
 				echo("<div class='generated' onmouseover= 'show($desc)' onmouseout= 'hide()'> $course </div>");
 				}
 			}
@@ -147,10 +152,15 @@
 	</div>
 	</div>
 	<div id="info">
-		<p id="content" style="overflow:auto;height:auto;width:50%"></p> 
+		<p id="content" style="vertical-align:middle;height:100px;width:95%"></p> 
 	</div>
 </div>
-<br><br><br><br><br><br>
-<a style="vertical-align: middle;" href="index.php">Home</a>
+<span style="bottom:0;left:0;float:left;display:inline-block;position:absolute;">
+	<a href="index.php">
+		<button class="button">
+			<< Home
+		</button>
+	</a>
+</span>
 </body>
 </html>

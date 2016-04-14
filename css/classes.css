@@ -15,6 +15,8 @@
 
 ._PHYS.is-checked:after{background-color:#a5c25c;}
 ._PHYSL.is-checked:after{background-color:#a5c25c;}
+
+._STAT.is-checked:after{background-color:#E08283;}
 /*.is-checked:after {background-color: #446CB3;} */
 
 /**CMSC 200 **/
@@ -92,6 +94,10 @@
 ._P121:after{content: "121";}
 ._P122:after{content: "122";}
 ._P122L:after{content: "122L";font-size: 40px;}
+
+/** STAT **/
+._S355:after{content: "355";}
+._S451:after{content: "451";}
 
 /*  These are here because of the colors
 
