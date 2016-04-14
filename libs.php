@@ -4,7 +4,7 @@
 */
 function connect($user){
 
-	$db ="jstand1";
+	$db ="$user";
 	$conn = mysql_connect("studentdb-maria.gl.umbc.edu", "$user", "$user");
 	if(!$conn){
 		echo("Could not connect to MySQL");
